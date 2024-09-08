@@ -36,6 +36,6 @@
 		<!-- Custom JS -->
 		<script src="assets/js/script.js"></script>
 		@if(Route::is(['map-grid','map-list']))
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6adZVdzTvBpE2yBRK8cDfsss8QXChK0I"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=MAPKEY"></script>
 		<script src="assets/js/map.js"></script>
 		@endif
