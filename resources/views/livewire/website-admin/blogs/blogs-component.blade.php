@@ -49,7 +49,7 @@
                                         <tr>
                                             <td scope="row">{{ $sn = $sn + 1 }}</td>
                                             <td  class="desktopView">
-                                                <img src="{{ asset('assets/images/blogs/'.$blog->image) }}" class="rounded" alt="" height="48">
+                                                <img src="{{ asset('guest/images/uploads/'.$blog->image) }}" class="rounded" alt="" height="48">
 
                                             </td>
                                             <td>{{ $blog->blog_title}}</td>

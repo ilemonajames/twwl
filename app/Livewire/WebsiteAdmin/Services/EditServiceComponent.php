@@ -13,7 +13,7 @@ class EditServiceComponent extends Component
     public $title;
     public $photo;
     public $service;
-    public $service_icon;
+    // public $service_icon;
     use WithFileUploads;
     public $message = [
         'title.required' => "Please enter your service title",
@@ -35,22 +35,22 @@ class EditServiceComponent extends Component
             'title'=> ['required', 'string', 'max:255','unique:services,service_title,'.$this->service->id],
             'description'=> ['required', 'string'],
             'photo' => 'nullable|mimes:jpeg,png,gif',
-            'service_icon' => 'nullable|mimes:png',
+            // 'service_icon' => 'nullable|mimes:png',
         ],$this->message);
 
         //update service image if a new service image is selected
         if($this->photo){
-            Storage::disk('do')->delete(storePhoto().$this->service->service_icon);//delete old service image
+            Storage::disk('do')->delete(storePhoto().$this->service->service_image);//delete old service image
             $servicePhoto  = $this->uploadProductImage($formData['croped_image']);
             $this->service->update(['service_image'=>$servicePhoto ]);
         }
 
         //update service icon if a new service icon is selected
-        if($this->service_icon){
-            $serviceIcon = $this->uploadIcon();
-            Storage::disk('do')->delete(storePhoto().$this->service->service_image);
-            $this->service->update(['service_icon'=>$serviceIcon ]);
-        }
+        // if($this->service_icon){
+        //     $serviceIcon = $this->uploadIcon();
+        //     Storage::disk('do')->delete(storePhoto().$this->service->service_image);
+        //     $this->service->update(['service_icon'=>$serviceIcon ]);
+        // }
 
         $this->service->update([
             'service_title' => $this->title,

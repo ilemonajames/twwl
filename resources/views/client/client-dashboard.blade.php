@@ -58,7 +58,6 @@
 														<table class="table table-hover table-center mb-0">
 															<thead>
 																<tr>
-																	<th>Counsellor</th>
 																	<th>Appt Date</th>
 																	<th>Booking Date</th>
 																	<th>Amount</th>
@@ -69,14 +68,6 @@
 															</thead>
 															<tbody>
 																<tr>
-																	<td>
-																		<h2 class="table-avatar">
-																			<a href="councellor-profile" class="avatar avatar-sm mr-2">
-																				<img class="avatar-img rounded-circle" src="assets/img/counsellors/counsellor-thumb-01.jpg" alt="User Image">
-																			</a>
-																			<a href="councellor-profile">Ruby Perrin <span>Counsellor</span></a>
-																		</h2>
-																	</td>
 																	<td>14 Nov 2019 <span class="d-block text-info">10.00 AM</span></td>
 																	<td>12 Nov 2019</td>
 																	<td>$160</td>

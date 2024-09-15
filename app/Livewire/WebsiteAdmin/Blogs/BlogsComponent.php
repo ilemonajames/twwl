@@ -51,7 +51,7 @@ class BlogsComponent extends Component
     public function deleteBlog(){
         $blog= Blog::find($this->actionId);
         if($blog){
-            unlink('assets/images/blogs/'.$blog->image);
+            unlink('guest/images/uploads/'.$blog->image);
         }
         $blog->delete();
         $this->dispatch('feedback',feedback:'Blog Successfully Deleted');
