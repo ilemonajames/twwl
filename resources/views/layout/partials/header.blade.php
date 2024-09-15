@@ -16,7 +16,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col">
-							<a href="index" class="navbar-brand logo">
+							<a href="{{ route('home')}}" class="navbar-brand logo">
 								<img src="{{ asset('assets/img/logo.jpg')}}" class="img-fluid" alt="Logo">
 							</a>
 						</div>
@@ -89,7 +89,7 @@
 					</div>
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
-							<a href="index" class="menu-logo">
+							<a href="{{ route('home')}}" class="menu-logo">
 								<img src="{{ asset('assets/img/logo.jpg')}}" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);">
