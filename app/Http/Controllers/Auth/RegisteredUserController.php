@@ -44,6 +44,7 @@ class RegisteredUserController extends Controller
             'phoneno' => $request->phoneno,
             'email' => $request->email,
             'user_type' => "Client",
+            'status' => 'Active',
             'password' => Hash::make($request->password),
         ]);
 
