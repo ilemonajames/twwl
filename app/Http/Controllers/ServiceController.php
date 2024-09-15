@@ -13,6 +13,17 @@ class ServiceController extends Controller
         return view('services.index', compact('services'));
     }
 
+    public function details($id){
+        $service = Service::find($id);
+        $services = Service::all();
+        return view('services.service-detials',compact('service','services'));
+    }
+
+    public function our_services(){
+        $services = Service::all();
+        return view('services.our-services',compact('services'));
+    }
+
     public function create()
     {
         return view('services.create');
@@ -26,16 +37,16 @@ class ServiceController extends Controller
             'price' => 'required|numeric',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-    
+
         $imagePath = $request->file('image') ? $request->file('image')->store('services', 'public') : null;
-    
+
         Service::create([
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
             'image' => $imagePath,
         ]);
-    
+
         return redirect()->route('services.index')->with('success', 'Service created successfully.');
     }
     public function show(Service $service)
