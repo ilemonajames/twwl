@@ -12,10 +12,12 @@ return new class extends Migration
     public function up()
 {
     Schema::create('services', function (Blueprint $table) {
-        $table->id();
-        $table->string('name');
-        $table->text('description');
-        $table->decimal('price', 8, 2);
+        $table->uuid('id')->primary();
+        $table->string('service_icon');
+        $table->string('service_image');
+        $table->string('service_title');
+        $table->text('service_description');
+        $table->decimal('price', 8, 2)->default(0.0);
         $table->boolean('is_featured')->default(false); // Add this line
         $table->timestamps();
     });

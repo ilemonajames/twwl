@@ -1,52 +1,108 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+@extends('layout.mainlayout')
+@section('title')
+    Authorized Access
+@endsection
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+@section('content')
+    <!-- Breadcrumb --><br>
+    <div class="breadcrumb-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-12 col-12">
+                    <nav aria-label="breadcrumb" class="page-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page"></li>
+                        </ol>
+                    </nav>
+                    <h2 class="breadcrumb-title">Sign up</h2>
+                </div>
+            </div>
         </div>
+    </div>
+    <!-- /Breadcrumb -->
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <!-- Blog Sidebar -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="contact-img" align="center">
+                        <img src="{{ asset('assets/images/login.png') }}" width="100%" class="" alt="about-img">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12">
+                    <div class="card new-comment clearfix">
+                        <div class="card-header">
+                            <h4 class="card-title"><b>Create Account</b></h4>
+                        </div>
+                        <div class="card-body">
+                            <form method="post" action="{{ route('register')}}">
+                                @csrf
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Surname <span class="text-danger">*</span></label>
+                                            <input type="text" value="{{ old('surname')}}" name="surname" class="form-control">
+                                            @error('surname')
+                                                <p class="text-danger">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Othernames <span class="text-danger">*</span></label>
+                                            <input type="text" value="{{ old('othernames')}}" name="othernames" class="form-control">
+                                            @error('othernames')
+                                                <p class="text-danger">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email Address <span class="text-danger">*</span></label>
+                                    <input type="email" value="{{ old('email')}}" name="email" class="form-control">
+                                    @error('email')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number <span class="text-danger">*</span></label>
+                                    <input type="text" value="{{ old('phoneno')}}" name="phoneno" class="form-control">
+                                    @error('phoneno')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Password <span class="text-danger">*</span></label>
+                                            <input type="password" name="password" class="form-control">
+                                            @error('password')
+                                                <p class="text-danger">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Password Confirmation <span class="text-danger">*</span></label>
+                                            <input type="password" name="password_confirmation" class="form-control">
+                                            @error('password_confirmation')
+                                                <p class="text-danger">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="submit-section">
+                                    <button class="btn btn-primary submit-btn"
+                                        type="submit">Sign up</button>  Already have account?  <a href="{{ route('login')}}">Login </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+    </div>
+@endsection
