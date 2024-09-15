@@ -10,9 +10,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\BlogController;
 
 use App\Http\Middleware\SuperAdminMiddleware;
 use App\Http\Middleware\WebsiteAdminMiddleware;
+use App\Http\Middleware\ClientMiddleware;
 
 use App\Livewire\Guest\Events\EventDetailsComponent;
 
@@ -74,6 +76,11 @@ Route::get('/contact', function () {
 Route::post('/contact-us',[ ContactController::class,'sendMessage'])->name('sendMessage');
 
 
+Route::get('/frequently-asked-question', function () {
+    $faqs = App\Models\Faq::all();
+    return view('informations.faq',compact('faqs'));
+})->name('faq');
+
 // Appointment Routes
 Route::resource('appointments', AppointmentController::class)->except(['index', 'create', 'show', 'edit']);
 Route::get('appointments', [AppointmentController::class, 'index'])->name('appointments.index');
@@ -101,6 +108,9 @@ Route::get('services-details/{service}/edit', [ServiceController::class, 'detail
 Route::get('our-services', [ServiceController::class, 'our_services'])->name('services.all');
 Route::post('subscriber', [NewsletterController::class, 'subscribe'])->name('subscribe');
 
+Route::get('blog-details/{service}/details', [BlogController::class, 'details'])->name('blogs.details');
+Route::get('blogs', [BlogController::class, 'all_blogs'])->name('blogs.all');
+
 // Pages route
 // Route::get('/about', [PageController::class, 'about'])->name('about');
 
@@ -119,8 +129,7 @@ Route::middleware(['auth:sanctum','verified',])->group(function () {
     Route::get('/dashboard',[ DashboardController::class,'dashboard'])->name('dashboard');
 
     //client routes
-    Route::prefix('client')->group(function(){
-
+    Route::middleware([ClientMiddleware::class])->prefix('client')->group(function(){
         Route::get('/client-dashboard', function () {
             return view('client.client-dashboard');
         })->name('client-dashboard');
@@ -129,13 +138,17 @@ Route::middleware(['auth:sanctum','verified',])->group(function () {
             return view('client.change-password');
         })->name('client.change-password');
 
-    Route::post('/change-password',[ DashboardController::class,'changepassword'])->name('dashboard');
+        Route::get('/booking', function () {
+            return view('client.book-consultation');
+        })->name('client.book');
+
+    Route::post('/change-password',[ DashboardController::class,'changepassword'])->name('client.change-password');
 
     });
 
     //website admin route
     Route::middleware([WebsiteAdminMiddleware::class])->prefix('website-admin')->group(function(){
-        Route::get('/admin-dashboard',WebsiteAdminDashbaord::class)->name('websiteadmin.dashboard');
+        Route::get('/dashboard',WebsiteAdminDashbaord::class)->name('websiteadmin.dashboard');
         Route::get('/services/create',NewServiceComponent::class)->name('services.create');
         Route::get('/services',WebsiteAdminServiceComponent::class)->name('services.index');
         Route::get('/services/{id}/edit',EditServiceComponent::class)->name('services.edit');

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->uuid('user_id')->constrained()->onDelete('cascade');
             $table->uuid('service_id')->constrained()->onDelete('cascade');
             $table->dateTime('appointment_date');
+            $table->dateTime('appointment_time');
             $table->string('status')->default('pending');
             $table->timestamps();
         });

@@ -34,13 +34,13 @@
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
-                                <div class="mb-3">
+                                {{-- <div class="mb-3">
                                     <label class="form-label">Icon of what we do</label>
                                     <input class="form-control" wire:model="service_icon" type="file" placeholder="">
                                     @error('service_icon')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
-                                </div>
+                                </div> --}}
                                 <div class="mb-3">
                                     <label class="form-label">Image of What we do</label>
                                     <input id="croped_image" name="croped_image" type="text" hidden>

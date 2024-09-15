@@ -106,16 +106,18 @@
 							<li class="{{ Request::is('our-services') ? 'active' : '' }}">
 								<a href="{{ route('services.all') }}"><b>Services</b></a>
 							</li>
-							<li class="{{ Request::is('find-counselor') ? 'active' : '' }}">
+							{{-- <li class="{{ Request::is('find-counselor') ? 'active' : '' }}">
 								<a href="#"><b>Mission</b></a>
-							</li>
-                            <li class="{{ Request::is('find-counselor') ? 'active' : '' }}">
-								<a href="#"><b>Blog</b></a>
+							</li> --}}
+                            <li class="{{ Request::is('blogs') ? 'active' : '' }}">
+								<a href="{{ route('blogs.all')}}"><b>Blog</b></a>
 							</li>
 							<li class="{{ Request::is('contact') ? 'active' : '' }}">
 								<a href="{{ route('contact') }}"><b>Contact</b></a>
 							</li>
-
+							<li class="{{ Request::is('frequently-asked-question') ? 'active' : '' }}">
+								<a href="{{route('faq')}}"><b>Frequently asked Question</b></a>
+							</li>
 							<li class="login-link">
 								<a href="login">Login / Signup</a>
 							</li>
@@ -147,16 +149,19 @@
                                     <p class="text-muted mb-0">{{ Auth::user()->user_type }}</p>
                                 </div>
                             </div>
-                            <a class="dropdown-item" href="{{ route('client-dashboard')}}">Dashboard</a>
-                            <a class="dropdown-item" href="#">Profile Settings</a>
+                            <a class="dropdown-item" href="{{ route('dashboard')}}">Dashboard</a>
+                            {{-- <a class="dropdown-item" href="#">Profile Settings</a> --}}
                             <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">  @csrf</form>Logout</a>
                         </div>
                     </li>
+                    @if(Auth::user()->user_type=="Client")
+
                     <li class="nav-item">
-                        <a class="nav-link header-login" href="login">Book Appointment </a>
+                        <a class="nav-link header-login" href="{{ route('client.book')}}">Book Appointment </a>
                     </li>
+                    @endif
                     @endguest
 
 					</ul>

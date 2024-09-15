@@ -47,7 +47,7 @@ class WebsiteAdminServiceComponent extends Component
     public function deleteService(){
         $service= Service::find($this->actionId);
         if($service){
-            unlink('guest/images/uploads/'.$service->service_icon);
+            // unlink('guest/images/uploads/'.$service->service_icon);
             unlink('guest/images/uploads/'.$service->service_image);
         }
         $service->delete();

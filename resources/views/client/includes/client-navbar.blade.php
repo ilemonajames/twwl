@@ -16,16 +16,22 @@
         <div class="dashboard-widget">
             <nav class="dashboard-menu">
                 <ul>
-                    <li class="active">
+                    <li class="{{ Request::is('/client/booking') ? 'active' : '' }}">
                         <a href="{{ route('client-dashboard')}}">
                             <i class="fas fa-columns"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
+                    <li class="{{ Request::is('/client/booking') ? 'active' : '' }}">
+                        <a href="{{ route('client.book')}}">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Book Appointments</span>
+                        </a>
+                    </li>
                     <li>
                         <a href="appointments">
                             <i class="fas fa-calendar-check"></i>
-                            <span>Appointments</span>
+                            <span>My Appointments</span>
                         </a>
                     </li>
                     <li>

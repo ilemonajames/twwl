@@ -56,7 +56,7 @@
                                                         <h5><b>Our Address</b></h5>
                                                     </div>
                                                     <div class="feature-box-content">
-                                                        <p>Suite 19 TMC Plaza, 5 Garba Abbas Street, Barnawa Kaduna.</p>
+                                                        <p>205 ½ E Broadway, Suite F & G Hopewell VA. 23860.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -79,8 +79,7 @@
                                                         <h5><b>Phone Number</b></h5>
                                                     </div>
                                                     <div class="feature-box-content">
-                                                        <p><a href="tel:+2348061699893">+(234) 806 169 9893</a>,</p>
-                                                        <p><a href="tel:+2348062797881">+(234) 806 279 7881</a></p>
+                                                        <p><a href="tel: +2348047210983">+234 804-721-0983</a>,</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -103,7 +102,7 @@
                                                         <h5><b>Email Address</b></h5>
                                                     </div>
                                                     <div class="feature-box-content">
-                                                        <p><a href="mailto:support@jikasidemicrocredit.com">support@jikasidemicrocredit.com</a>,</p>
+                                                        <p><a href="mailto:Thewayweloverelationshipcoun24tgmail.com">thewayweloverelationshipcoun24@gmail.com</a></p>
                                                     </div>
                                                 </div>
                                             </div>

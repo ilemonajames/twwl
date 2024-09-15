@@ -50,7 +50,7 @@
                     </ul>
                 </li>
 
-                {{-- <li>
+                <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="mdi mdi-newspaper-variant-outline"></i>
                         <span>Blog Post</span>
@@ -59,7 +59,7 @@
                         <li><a href="{{ route('blogs.create') }}">Add Blog Post</a></li>
                         <li><a href="{{ route('blogs.index') }}">Manage Blog Posts</a></li>
                     </ul>
-                </li> --}}
+                </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -87,6 +87,16 @@
                         <i class="mdi mdi-calendar"></i>
                         <span>Bookings</span>
                     </a>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="mdi mdi-frequently-asked-questions"></i>
+                        <span>FAQ</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('faqs.create')}}">Add Question</a></li>
+                        <li><a href="{{ route('faqs.index')}}">Manage Questions</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>

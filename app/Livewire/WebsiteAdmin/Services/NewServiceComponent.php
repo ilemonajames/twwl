@@ -34,17 +34,17 @@ class NewServiceComponent extends Component
             'title'=> ['required', 'string', 'max:255','unique:services,service_title'],
             'description'=> ['required', 'string'],
             'photo' => 'required|mimes:jpeg,png,gif',
-            'service_icon' => 'required|mimes:png',
+            // 'service_icon' => 'required|mimes:png',
         ],$this->message);
 
         $servicePhoto  = $this->uploadProductImage($formData['croped_image']);
-        $serviceIcon = $this->uploadIcon();
+        // $serviceIcon = $this->uploadIcon();
 
         Service::create([
             'service_title' => $this->title,
             'service_description' => $this->description,
             'service_image' => $servicePhoto,
-            'service_icon' => $serviceIcon,
+            // 'service_icon' => $serviceIcon,
         ]);
 
         $this->reset();
@@ -53,11 +53,11 @@ class NewServiceComponent extends Component
 
 
     //upload service icon
-    public function uploadIcon(){
-        $photoName = Carbon::now()->timestamp. '.' . $this->service_icon->getClientOriginalName();//generate name for image
-        $this->service_icon->storeAs('/services',$photoName);
-        return $photoName;
-    }
+    // public function uploadIcon(){
+    //     $photoName = Carbon::now()->timestamp. '.' . $this->service_icon->getClientOriginalName();//generate name for image
+    //     $this->service_icon->storeAs('/services',$photoName);
+    //     return $photoName;
+    // }
 
     //upload service image
     public function uploadProductImage($image){
