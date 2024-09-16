@@ -41,10 +41,11 @@
                             <div class="blog-content">
                                 <p>{!! $service->service_description !!}</p>
                                 <div class="row">
-                                    <div class="btn btn-lg btn-primary">Book Now</div>
+                                    <a href="{{ route('client.book')}}" class="btn btn-danger">Book Appointment</a>
+
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
