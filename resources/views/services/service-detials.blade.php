@@ -40,7 +40,11 @@
 
                             <div class="blog-content">
                                 <p>{!! $service->service_description !!}</p>
+                                <div class="row">
+                                    <div class="btn btn-lg btn-primary">Book Now</div>
+                                </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>

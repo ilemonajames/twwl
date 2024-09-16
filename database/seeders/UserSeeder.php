@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('TWWC@2024'),
             'user_type' => 'Website Admin',
             'status' => "Active",
-            'resident_address' => "Kaduna"
+            'resident_address' => "Abuja"
         ]);
 
         User::create([
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('Luvday@1994'),
             'user_type' => 'Website Admin',
             'status' => "Active",
-            'resident_address' => "Kaduna"
+            'resident_address' => "Abuja"
         ]);
     }
 }

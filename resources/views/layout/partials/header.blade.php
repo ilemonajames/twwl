@@ -111,12 +111,13 @@
 							</li> --}}
                             <li class="{{ Request::is('blogs') ? 'active' : '' }}">
 								<a href="{{ route('blogs.all')}}"><b>Blog</b></a>
+								<ul class="sub-menu"><li class="sub-menu-item">Podcast</li><li class="sub-menu-item">Live</li></ul>
 							</li>
 							<li class="{{ Request::is('contact') ? 'active' : '' }}">
 								<a href="{{ route('contact') }}"><b>Contact</b></a>
 							</li>
 							<li class="{{ Request::is('frequently-asked-question') ? 'active' : '' }}">
-								<a href="{{route('faq')}}"><b>Frequently asked Question</b></a>
+								<a href="{{route('faq')}}"><b>FAQ</b></a>
 							</li>
 							<li class="login-link">
 								<a href="login">Login / Signup</a>
