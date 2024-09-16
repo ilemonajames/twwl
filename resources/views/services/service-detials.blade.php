@@ -42,7 +42,6 @@
                                 <p>{!! $service->service_description !!}</p>
                                 <div class="row">
                                     <a href="{{ route('client.book')}}" class="btn btn-danger">Book Appointment</a>
-
                                 </div>
                             </div>
 

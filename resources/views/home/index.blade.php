@@ -58,9 +58,13 @@
 								<div class="card-body">
 								  	<h2 class="card-title blog-heading"><a href="{{ route('services.details',$service->id)}}"> {{ $service->service_title }}</a></h2>
 								  	<p class="blog-para">{!! Str::limit(strip_tags($service->service_description),100) !!}</p><br>
-
-                                      <a href="{{ route('client.book')}}" class="btn btn-danger">Book Appointment</a>
-                                      <a href="{{ route('services.details',$service->id)}}" class="btn btn-primary" style="float: right">Learn more</a>
+                                      <div class="row mt-3 ml-2">
+                                        <a class="btn btn-primary btn-sm"
+                                        href="{{ route('client.book')}}">Book Now</a> || <a class="btn btn-success btn-sm"
+                                            href="{{ route('services.details', $service->id) }}">Learn more</a>
+                                    </div>
+                                      {{-- <a href="{{ route('client.book')}}" class="btn btn-danger">Book Appointment</a>
+                                      <a href="{{ route('services.details',$service->id)}}" class="btn btn-primary" style="float: right">Learn more</a> --}}
 								</div>
 
 							</div>
