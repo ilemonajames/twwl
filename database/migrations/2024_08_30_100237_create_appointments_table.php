@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->uuid('user_id')->constrained()->onDelete('cascade');
             $table->uuid('service_id')->constrained()->onDelete('cascade');
+            $table->uuid('program_id')->constrained()->onDelete('cascade');
             $table->date('appointment_date');
             $table->time('appointment_time');
             $table->string('status')->default('pending');
