@@ -6,19 +6,21 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\UUID;
 
-class Program extends Model
+class EventRegistration extends Model
 {
     use HasFactory;
     use UUID;
 
     protected $fillable = [
-        'program_image',
-        'program_title',
-        'program_description',
-        'price'
+        'name',
+        'email',
+        'phoneno',
+        'message',
+        'event_id',
+        'type'
     ];
 
-    public function fees(){
-        return $this->hasMany(ProgramFee::class);
+    public function event(){
+        return $this->belongsTo(Event::class);
     }
 }

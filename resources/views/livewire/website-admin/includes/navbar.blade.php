@@ -41,6 +41,28 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="mdi mdi-folder"></i>
+                        <span>Programs</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('programs.create')}}">Add Program</a></li>
+                        <li><a href="{{ route('programs.index')}}">Manage Program</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="mdi mdi-repeat"></i>
+                        <span>Programs Fees</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('fees.create')}}">Setup Program Fees</a></li>
+                        <li><a href="{{ route('fees.index')}}">Manage Program Fees</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="mdi mdi-settings"></i>
                         <span>What we do</span>
                     </a>

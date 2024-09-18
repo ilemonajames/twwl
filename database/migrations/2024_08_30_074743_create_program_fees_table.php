@@ -11,19 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('payments', function (Blueprint $table) {
+        Schema::create('program_fees', function (Blueprint $table) {
             $table->id();
-            $table->uuid('user_id')->constrained()->onDelete('cascade');
-            $table->uuid('appointment_id')->nullable()->constrained()->onDelete('cascade');
-            $table->string('payment_type'); // New field: 'service' or 'program'
-            $table->uuid('service_id')->nullable()->constrained()->onDelete('cascade');
             $table->uuid('program_id')->nullable()->constrained()->onDelete('cascade');
-            $table->decimal('amount', 8, 2);
+            $table->uuid('service_id')->nullable()->constrained()->onDelete('cascade');
+            $table->decimal('consultation_fees', 8, 2);
+            $table->decimal('session_fees', 8, 2);
+            $table->decimal('program_fees', 8, 2);
+            $table->string('duration');
             $table->string('payment_status')->default('pending');
             $table->timestamps();
         });
-
-
     }
 
     /**
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('payments');
+        Schema::dropIfExists('program_fees');
     }
 };

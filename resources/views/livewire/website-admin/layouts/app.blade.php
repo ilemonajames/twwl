@@ -98,6 +98,29 @@
     <x-confirm-alert/>
     <x-toast-notification/>
     @stack('scripts')
+    <script>
+        function numericInputs(event) {
+            var input = event.target;
+            var inputValue = input.value;
+            var regex = /^[0-9]*$/; // This regex only allows digits from 0 to 9.
+
+            if (!regex.test(inputValue)) {
+                // If the input doesn't match the regex, clear the input field.
+                input.value = inputValue.replace(/[^0-9]/g, '');
+            }
+        }
+
+        function alphabetInputs(event) {
+            var alfInput = event.target;
+            var alfInputValue = alfInput.value;
+            var regex = /^[a-z,A-Z]*$/; // This regex only allows digits from 0 to 9.
+
+            if (!regex.test(alfInputValue)) {
+                // If the alfInput doesn't match the regex, clear the alfInput field.
+                alfInput.value = alfInputValue.replace(/[^a-z,A-Z]/g, '');
+            }
+        }
+    </script>
 </body>
 
 </html>
