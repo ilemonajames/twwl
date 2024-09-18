@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\ProgramFee;
+use App\Models\Appointment;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class ServiceController extends Controller
 {
@@ -11,6 +15,71 @@ class ServiceController extends Controller
     {
         $services = Service::all();
         return view('services.index', compact('services'));
+    }
+
+    public function getServices($id){
+        $programFees = ProgramFee::where('program_id',$id)->get()->pluck('service_id');
+        $services = Service::whereIn('id',$programFees)->get();
+        return json_encode($services);
+    }
+
+    public function bookingPrice($id,$productID){
+        $programFees = ProgramFee::where('program_id',$productID)->where('service_id',$id)->first();
+        if($programFees!=null){
+            return json_encode($programFees);
+        }else{
+            echo 0;
+        }
+    }
+
+    function getTimeDiff($startTime, $endTime) {
+        $startTime = Carbon::parse($startTime); // Example start time
+        $endTime = Carbon::parse($endTime); // Example end time
+
+        // Calculate the difference in hours
+        $hoursDifference = $startTime->diffInHours($endTime);
+
+        // Check if the difference is greater than or equal to 2 hours
+        if ($hoursDifference >= 2) {
+            return true;
+        } else {
+           return false;
+        }
+    }
+
+    public function bookAppointment(Request $request){
+        $data = $request->validate([
+            'program' => ['required'],
+            'service' => ['required'],
+            'ap_date' => ['required'],
+            'ap_time' => ['required'],
+            'comment' => ['required'],
+        ]);
+
+        $appointment = null;
+        $getAppoinetments = Appointment::where('appointment_date',$data['ap_date'])->orderby('appointment_time','ASC')->get();
+        foreach($getAppoinetments as $app){
+            $getTimeDiff = $this->getTimeDiff($app->appointment_time,$data['ap_time']);
+            if($getTimeDiff==false){
+                $appointment = $app;
+            }
+        }
+
+        if(strtotime($data['ap_date'])<=strtotime(date('Y-m-d'))){
+            return back()->withInput()->with('errorfeedback','Sorry you cannot book appointment for today or prio to today');
+        }elseif($appointment!=null){
+            return back()->withInput()->with('errorfeedback','Sorry you cannot book appointment today for the selected time as there is an appointment booked for '.$appointment->appointment_time);
+        }else{
+            Appointment::create([
+                'service_id' => $data['service'],
+                'program_id' => $data['program'],
+                'appointment_date' => $data['ap_date'],
+                'appointment_time' => $data['ap_time'],
+                'user_id' => Auth::user()->id
+            ]);
+
+            return back()->with('feedback','Appointment Successfully Booking and awaiting confirmaitn');
+        }
     }
 
     public function details($id){
