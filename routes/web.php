@@ -140,7 +140,8 @@ Route::middleware(['auth:sanctum','verified',])->group(function () {
     //client routes
     Route::middleware([ClientMiddleware::class])->prefix('client')->group(function(){
         Route::get('/client-dashboard', function () {
-            return view('client.client-dashboard');
+            $bookings = App\Models\Appointment::where('user_id',Auth::user()->id)->get();
+            return view('client.client-dashboard',compact('bookings'));
         })->name('client-dashboard');
 
         Route::get('/change-password', function () {
@@ -151,7 +152,15 @@ Route::middleware(['auth:sanctum','verified',])->group(function () {
             return view('client.book-consultation');
         })->name('client.book');
 
+        Route::get('/client-bookings', function () {
+            $bookings = App\Models\Appointment::where('user_id',Auth::user()->id)->get();
+            return view('client.appointments',compact('bookings'));
+        })->name('client.bookings');
+
     Route::post('/change-password',[ DashboardController::class,'changepassword'])->name('client.change-password');
+    Route::get('/get-services/{id}',[ ServiceController::class,'getServices']);
+    Route::get('/get-booking-price/{id}/{productID}',[ ServiceController::class,'bookingPrice']);
+    Route::post('/book-appointment',[ ServiceController::class,'bookAppointment'])->name('book-appointment');
 
     });
 

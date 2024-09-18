@@ -58,32 +58,31 @@
 														<table class="table table-hover table-center mb-0">
 															<thead>
 																<tr>
-																	<th>Appt Date</th>
 																	<th>Booking Date</th>
-																	<th>Amount</th>
-																	<th>Follow Up</th>
+																	<th>Appointment Date</th>
+																	<th>Program</th>
+																	<th>Service</th>
 																	<th>Status</th>
 																	<th></th>
 																</tr>
 															</thead>
 															<tbody>
+                                                            @foreach($bookings as $booking)
 																<tr>
-																	<td>14 Nov 2019 <span class="d-block text-info">10.00 AM</span></td>
-																	<td>12 Nov 2019</td>
-																	<td>$160</td>
-																	<td>16 Nov 2019</td>
-																	<td><span class="badge badge-pill bg-success-light">Confirm</span></td>
+																	<td>{{ $booking->created_at->format('d M, Y') }} <span class="d-block text-info">{{ $booking->created_at->format('h:m:s') }}</span></td>
+																	<td>{{ $booking->appointment_date->format('d M, Y') }} <span class="d-block text-info">{{ $booking->appointment_time }}</span></td>
+																	<td>{{ $booking->program->program_title  }}</td>
+																	<td>{{ $booking->service->service_title  }}</td>
+																	<td><span class="badge badge-pill @if($booking->status=="pending") bg-danger-light @else bg-success-light @endif">{{ $booking->status }}</span></td>
 																	<td class="text-right">
 																		<div class="table-action">
-																			<a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
-																				<i class="fas fa-print"></i> Print
-																			</a>
 																			<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
 																				<i class="far fa-eye"></i> View
 																			</a>
 																		</div>
 																	</td>
 																</tr>
+                                                            @endforeach
 															</tbody>
 														</table>
 													</div>

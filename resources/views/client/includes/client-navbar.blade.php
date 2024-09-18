@@ -29,7 +29,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="appointments">
+                        <a href="{{ route('client.bookings')}}">
                             <i class="fas fa-calendar-check"></i>
                             <span>My Appointments</span>
                         </a>
