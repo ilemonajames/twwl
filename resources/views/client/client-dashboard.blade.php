@@ -115,11 +115,11 @@
 															<tbody>
                                                             @foreach($payments as $payment)
 																<tr>
-																	<td>{{ $booking->program->program_title  }}</td>
-																	<td>{{ $booking->service->service_title  }}</td>
-																	<td>${{ number_fromat($booking->amount,2)  }}</td>
-																	<td>{{ $booking->created_at  }}</td>
-																	<td><span class="badge badge-pill @if($payment->status=="pending") bg-danger-light @else bg-success-light @endif">{{ $booking->status }}</span></td>
+																	<td>{{ $payment->program->program_title  }}</td>
+																	<td>{{ $payment->service->service_title  }}</td>
+																	<td>${{ number_format($payment->amount)  }}</td>
+																	<td>{{ $payment->created_at  }}</td>
+																	<td><span class="badge badge-pill @if($payment->payment_status=="pending") bg-danger-light @else bg-success-light @endif">{{ $payment->payment_status }}</span></td>
 																	<td class="text-right">
 																		<div class="table-action">
 																			<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
