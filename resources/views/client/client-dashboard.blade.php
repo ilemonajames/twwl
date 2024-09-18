@@ -54,6 +54,7 @@
 										<div id="pat_appointments" class="tab-pane fade show active">
 											<div class="card card-table mb-0">
 												<div class="card-body">
+                                                    @if(count($bookings)>0)
 													<div class="table-responsive">
 														<table class="table table-hover table-center mb-0">
 															<thead>
@@ -86,6 +87,9 @@
 															</tbody>
 														</table>
 													</div>
+                                                    @else
+                                                        <div class="alert alert-danger">You are yet to make any booking yet <a href="{{ route('client.book')}}">Book Appointment</a></div>
+                                                    @endif
 												</div>
 											</div>
 										</div>
@@ -95,42 +99,42 @@
 										<div class="tab-pane fade" id="pat_prescriptions">
 											<div class="card card-table mb-0">
 												<div class="card-body">
-													<div class="table-responsive">
+                                                    @if(count($payments)>0)
+                                                    <div class="table-responsive">
 														<table class="table table-hover table-center mb-0">
 															<thead>
 																<tr>
-																	<th>Date </th>
-																	<th>Name</th>
-																	<th>Created by </th>
+																	<th>Program</th>
+																	<th>Service</th>
+																	<th>Amount</th>
+																	<th>Transaction Date</th>
+																	<th>Status</th>
 																	<th></th>
 																</tr>
 															</thead>
 															<tbody>
+                                                            @foreach($payments as $payment)
 																<tr>
-																	<td>14 Nov 2019</td>
-																	<td>Prescription 1</td>
-																	<td>
-																		<h2 class="table-avatar">
-																			<a href="councellor-profile" class="avatar avatar-sm mr-2">
-																				<img class="avatar-img rounded-circle" src="assets/img/counsellors/counsellor-thumb-01.jpg" alt="User Image">
-																			</a>
-																			<a href="councellor-profile">Ruby Perrin <span>Counsellor</span></a>
-																		</h2>
-																	</td>
+																	<td>{{ $booking->program->program_title  }}</td>
+																	<td>{{ $booking->service->service_title  }}</td>
+																	<td>${{ number_fromat($booking->amount,2)  }}</td>
+																	<td>{{ $booking->created_at  }}</td>
+																	<td><span class="badge badge-pill @if($payment->status=="pending") bg-danger-light @else bg-success-light @endif">{{ $booking->status }}</span></td>
 																	<td class="text-right">
 																		<div class="table-action">
-																			<a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
-																				<i class="fas fa-print"></i> Print
-																			</a>
 																			<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
 																				<i class="far fa-eye"></i> View
 																			</a>
 																		</div>
 																	</td>
 																</tr>
+                                                                @endforeach
 															</tbody>
 														</table>
 													</div>
+                                                @else
+                                                    <div class="alert alert-danger">You are yet to make any payment yet <a href="{{ route('client.book')}}">Book Appointment</a></div>
+                                                @endif
 												</div>
 											</div>
 										</div>

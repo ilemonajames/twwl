@@ -141,7 +141,8 @@ Route::middleware(['auth:sanctum','verified',])->group(function () {
     Route::middleware([ClientMiddleware::class])->prefix('client')->group(function(){
         Route::get('/client-dashboard', function () {
             $bookings = App\Models\Appointment::where('user_id',Auth::user()->id)->get();
-            return view('client.client-dashboard',compact('bookings'));
+            $payments = App\Models\Payment::where('user_id',Auth::user()->id)->get();
+            return view('client.client-dashboard',compact('bookings','payments'));
         })->name('client-dashboard');
 
         Route::get('/change-password', function () {
