@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('programs', function (Blueprint $table) {
+        Schema::create('event_registrations', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('program_image');
-            $table->string('program_title');
-            $table->text('program_description');
-            $table->boolean('is_featured')->default(false); // Add this line
+            $table->string('name');
+            $table->text('type');
+            $table->text('email');
+            $table->string('phoneno');
+            $table->uuid('event_id')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('programs');
+        Schema::dropIfExists('event_registrations');
     }
 };

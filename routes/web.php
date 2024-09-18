@@ -24,11 +24,20 @@ use App\Livewire\Superadmin\SuperAdminContactComponent;
 use App\Livewire\Superadmin\SuperAdminDashboardComponent;
 
 
+
 //website admin components
 use App\Livewire\WebsiteAdmin\WebsiteAdminDashbaord;
 use App\Livewire\WebsiteAdmin\Services\NewServiceComponent;
 use App\Livewire\WebsiteAdmin\Services\WebsiteAdminServiceComponent;
 use App\Livewire\WebsiteAdmin\Services\EditServiceComponent;
+
+use App\Livewire\WebsiteAdmin\Programs\NewProgramComponent;
+use App\Livewire\WebsiteAdmin\Programs\ProgramsComponent;
+use App\Livewire\WebsiteAdmin\Programs\EditProgramComponent;
+
+use App\Livewire\WebsiteAdmin\Programfees\NewProgramFeeComponent;
+use App\Livewire\WebsiteAdmin\Programfees\ProgramFeesComponent;
+use App\Livewire\WebsiteAdmin\Programfees\EditProgramFeeComponent;
 
 use App\Livewire\WebsiteAdmin\Blogs\NewBlogComponent;
 use App\Livewire\WebsiteAdmin\Blogs\BlogsComponent;
@@ -152,6 +161,14 @@ Route::middleware(['auth:sanctum','verified',])->group(function () {
         Route::get('/services/create',NewServiceComponent::class)->name('services.create');
         Route::get('/services',WebsiteAdminServiceComponent::class)->name('services.index');
         Route::get('/services/{id}/edit',EditServiceComponent::class)->name('services.edit');
+
+        Route::get('/programs/create',NewProgramComponent::class)->name('programs.create');
+        Route::get('/programs',ProgramsComponent::class)->name('programs.index');
+        Route::get('/programs/{id}/edit',EditProgramComponent::class)->name('programs.edit');
+
+        Route::get('/program-fees/create',NewProgramFeeComponent::class)->name('fees.create');
+        Route::get('/program-fees',ProgramFeesComponent::class)->name('fees.index');
+        Route::get('/program-program/{id}/edit',EditProgramFeeComponent::class)->name('fees.edit');
 
         Route::get('/blogs/create',NewBlogComponent::class)->name('blogs.create');
         Route::get('/blogs',blogsComponent::class)->name('blogs.index');
