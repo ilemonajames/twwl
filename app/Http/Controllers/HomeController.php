@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\Program;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,6 +15,7 @@ class HomeController extends Controller
     {
         // Fetch featured services, for example, the top 3 services
         $services = Service::take(3)->get();
+        $programs = Program::take(3)->get();
 
         // Static banner and about us content
         $bannerText = "Welcome to The Way We Love Relationship Counseling";
@@ -23,6 +25,7 @@ class HomeController extends Controller
         return view('home.index', [
             'bannerText' => $bannerText,
             'services' => $services,
+            'programs' => $programs,
             'aboutUsText' => $aboutUsText,
         ]);
     }

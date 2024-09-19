@@ -1,18 +1,18 @@
 <div>
-    <x-slot name="title">Sermons Records</x-slot>
-    {{-- @include('livewire.website-admin.blogs.modals.view-blog-modal') --}}
-    <div class="page-content" >
-
+    @include('livewire.website-admin.booking.modals.schedule-appointment')
+    @include('livewire.website-admin.booking.modals.update-appointment')
+    <x-slot name="title">Bookings Records</x-slot>
+    <div class="page-content">
         <!-- start page title -->
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="page-title mb-0 font-size-18">Blog Records</h4>
+                    <h4 class="page-title mb-0 font-size-18">Bookings</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Sermons</li>
+                            <li class="breadcrumb-item active">Bookings</li>
                         </ol>
                     </div>
 
@@ -22,7 +22,7 @@
         <!-- end page title -->
 
         <div class="row">
-            <div class="col-lg-12" >
+            <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
                         <x-search-bar wire:model.live="searchTerm" placeholder="Search by blog title or description" />
@@ -33,10 +33,11 @@
                                 <thead>
                                     <tr>
                                         <th><b>#</b></th>
-                                        <th  class="desktopView"><b>Image</b></th>
-                                        <th><b>Title</b></th>
-                                        <th  class="desktopView"><b>Description</b></th>
-                                        <th><b>Minister</b></th>
+                                        <th class="desktopView"><b>Client Name</b></th>
+                                        <th><b>Appointment Datte</b></th>
+                                        <th class="desktopView"><b>Program</b></th>
+                                        <th><b>Service</b></th>
+                                        <th class="desktopView"><b>Status</b></th>
                                         <th><b>Action</b></th>
                                     </tr>
                                 </thead>
@@ -46,34 +47,37 @@
                                         vertical-align: middle;
                                     }
                                     </style>
-                                    @foreach ($sermons as $sermon)
+                                    @foreach ($bookings as $booking)
                                         <tr>
                                             <td scope="row">{{ $sn = $sn + 1 }}</td>
-                                            <td  class="desktopView">
-                                                <img src="{{ asset('assets/images/sermons/'.$sermon->image) }}" class="rounded" alt="" height="48">
-
-                                            </td>
-                                            <td>{{ $sermon->title}}</td>
-                                            <td  class="desktopView">{!! Str::limit(strip_tags($sermon->description),120) !!}</td>
-                                            <td>{{ $sermon->minister}}</td>
+                                            <td>{{ $booking->user->surname." ".$booking->user->othernames }}</td>
+                                            <td>{{ $booking->appointment_date->format('d M, Y')." ".$booking->appointment_time }}</td>
+                                            <td class="desktopView">{{ $booking->program->program_title }}</td>
+                                            <td class="desktopView">{{ $booking->service->service_title }}</td>
+                                            <td class="desktopView">{{ $booking->status }}</td>
                                             <td>
-                                                <div class="dropdown"> <button  class="btn btn-success" data-bs-toggle="dropdown"  aria-expanded="false"><i class="mdi mdi-dots-vertical m-0 text-white h5"></i> </button>
+                                                <div class="dropdown"> <button class="btn btn-success"
+                                                        data-bs-toggle="dropdown" aria-expanded="false"><i
+                                                            class="mdi mdi-dots-vertical m-0 text-white h5"></i>
+                                                    </button>
                                                     <div class="dropdown-menu dropdown-menu-end">
-                                                        {{-- <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#viewBlogModal" wire:click="setSermon({{ $sermon }})" href="#">View</a> --}}
-                                                        <a class="dropdown-item" href="{{ route('sermons.edit',$sermon->id)}}">Edit</a>
-                                                        <a class="dropdown-item confirm-delete" wire:click="setActionId('{{ $sermon->id }}')" href="#">Delete</a>
+                                                        @if($booking->status=="pending")
+                                                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#scheduleAppointment" wire:click="setBooking({{ $booking }})" href="#">School Appointment</a>
+                                                        @endif
+                                                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#updateAppointment" wire:click="setBooking({{ $booking }})" href="#">Update Appointment</a>
+                                                        <a class="dropdown-item confirm-delete" wire:click="setActionId('{{ $booking->id }}')" href="#">Delete</a>
                                                     </div>
                                                 </div>
                                             </td>
                                         </tr>
                                     @endforeach
-                                    @if(count($sermons)<=0)
-                                    <tr>
-                                        <td colspan="6" class="text-center">
-                                            <img src="https://img.freepik.com/free-vector/no-data-concept-illustration_114360-626.jpg?size=626&ext=jpg&uid=R51823309&ga=GA1.2.224938283.1666624918&semt=sph"
-                                            alt="No results found" style="width: 150px; height: 100px;">
-                                            <p class="mt-2 text-danger">No record found!</p>
-                                        </td>
+                                    @if (count($bookings) <= 0)
+                                        <tr>
+                                            <td colspan="6" class="text-center">
+                                                <img src="https://img.freepik.com/free-vector/no-data-concept-illustration_114360-626.jpg?size=626&ext=jpg&uid=R51823309&ga=GA1.2.224938283.1666624918&semt=sph"
+                                                    alt="No results found" style="width: 150px; height: 100px;">
+                                                <p class="mt-2 text-danger">No record found!</p>
+                                            </td>
                                         </tr>
                                     @endif
                                 </tbody>
@@ -81,7 +85,7 @@
                         </div>
                         <div class="mt-3">
                             <ul class="pagination pagination-rounded justify-content-center mb-0">
-                                {{ $sermons->links() }}
+                                {{ $bookings->links() }}
                             </ul>
                         </div>
                     </div>
@@ -156,7 +160,7 @@
                 fileReader.onload = function(e) {
                     $('#ImageToCrop').attr('src', e.target.result);
                     // window.addEventListener('image_file', event => {
-                        $('#image_modal').modal('show');
+                    $('#image_modal').modal('show');
                     // });
                 };
 

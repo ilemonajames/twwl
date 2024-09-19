@@ -144,13 +144,11 @@
 													<table class="heading_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 														<tr>
 															<td class="pad">
-                                                                <p>Dear Sir,</p>
-                                                                <p>You have a new contact message from {{ $name }}</p>
-                                                                <p>Email:  {{ $email }}</p>
+                                                                <p>Dear {{ $booking->user->surname }},</p>
+                                                                <p>You booking for {{ $booking->program->program_title }} has been scheduled as follows:<p>
+                                                                <p><b>Appointment Date:</b>  {{ $booking->appointment_date->format('d M, Y') }}</p>
+                                                                <p><b>Appointment Time:</b>  {{ $booking->appointment_time }}</p>
 																{{-- <h1 style="margin: 0; color: #Cc9933; direction: ltr; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 18px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: left; margin-top: 0; margin-bottom: 0; mso-line-height-alt: 33.6px;"><span class="tinyMce-placeholder"><span style="color: #515151;">{{ $newsletter->title }}</span>,</span></h1> --}}
-
-                                                            <p> {{ $message }}</p>
-
 															</td>
 														</tr>
 													</table>
