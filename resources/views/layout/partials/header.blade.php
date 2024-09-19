@@ -17,7 +17,7 @@
 					<div class="row">
 						<div class="col">
 							<a href="{{ route('home')}}" class="navbar-brand logo">
-								<img src="{{ asset('assets/img/logo.jpg')}}" class="img-fluid" alt="Logo">
+								<img src="{{ asset('assets/img/logo2.png')}}" class="img-fluid" alt="Logo">
 							</a>
 						</div>
 						{{-- <div class="col-2 d-flex align-items-center justify-content-center p-0">
@@ -90,7 +90,7 @@
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
 							<a href="{{ route('home')}}" class="menu-logo">
-								<img src="{{ asset('assets/img/logo.jpg')}}" class="img-fluid" alt="Logo">
+								<img src="{{ asset('assets/img/logo1.png')}}" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);">
 								<i class="fas fa-times"></i>
@@ -103,7 +103,7 @@
 							<li class="{{ Request::is('about') ? 'active' : '' }}">
 								<a href="{{ route('about') }}"><b>About Us</b></a>
 							</li>
-							<li class="{{ Request::is('our-services') ? 'active' : '' }}">
+							<li class="{{ Request::is('services') ? 'active' : '' }}">
 								<a href="{{ route('services.all') }}"><b>Services</b></a>
 							</li>
 							{{-- <li class="{{ Request::is('find-counselor') ? 'active' : '' }}">

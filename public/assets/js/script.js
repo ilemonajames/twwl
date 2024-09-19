@@ -374,3 +374,15 @@ function prevSlide() {
 function updateSlider() {
     document.querySelector('.slider').style.transform = `translateX(-${index * 100}%)`;
 }
+
+
+/* Example JavaScript to activate on scroll */
+window.addEventListener('scroll', function() {
+    let elements = document.querySelectorAll('.fade-in');
+    for (let i = 0; i < elements.length; i++) {
+        let position = elements[i].getBoundingClientRect().top;
+        if (position < window.innerHeight) {
+            elements[i].classList.add('active');
+        }
+    }
+});

@@ -1,6 +1,6 @@
 @extends('layout.mainlayout')
 @section('title')
-    Authorized Access
+    Create Account to continue 
 @endsection
 
 @section('content')

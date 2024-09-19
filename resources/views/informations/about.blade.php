@@ -14,7 +14,7 @@
 			<!-- We Always -->
 			<section class="section section-we-always">
 				<div class="row mb-2">
-					<div class="col-sm-5 col-lg-6 p-0 sec-hide we-al-img"></div>
+					<div class="col-sm-5 col-lg-6 p-0 sec-hide we-al-img2"></div>
 					<div class="col-sm-12 col-lg-6 we-always-info">
 						<h2>About Elizabeth Hall</h2>
 						<p align="justify">Elizabeth Hall is a dedicated mental health professional with a Master of Arts in Clinical Mental

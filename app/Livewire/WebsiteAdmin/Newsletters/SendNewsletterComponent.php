@@ -147,7 +147,7 @@ class SendNewsletterComponent extends Component
         $subscribers = NewsletterSubscriber::all();
 
         $chunkedSubscribers = $subscribers->chunk(5);
-        Mail::to("emberugbon@gmail.com")->send(new NewsletterMail($newsletter));
+        Mail::to("ilemonaj@gmail.com")->send(new NewsletterMail($newsletter));
         if(count($subscribers)>0){
             foreach($chunkedSubscribers as $subscribers){
                 $email = $subscribers->pluck('email')->toArray();

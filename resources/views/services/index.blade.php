@@ -1,9 +1,26 @@
 <!-- resources/views/services/index.blade.php -->
-@extends('layouts.app')
+@extends('layout.mainlayout')
 
 @section('title', 'Services')
 
 @section('content')
+   <!-- Breadcrumb -->
+   <div class="breadcrumb-bar">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-12 col-12">
+                <nav aria-label="breadcrumb" class="page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Services</li>
+                    </ol>
+                </nav>
+                <h2 class="breadcrumb-title">Services</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Breadcrumb -->
 <div class="container">
     <h1>All Services</h1>
 

@@ -6,7 +6,7 @@
 				<div class="slider">
 					<div class="slide" style="background-image: url({{asset('assets/img/banner/01.png')}});">
 						<div class="slide-content">
-							<h2>Reconnect, Rebuild, Rekindle Through Love</h2>
+							<h2>Transform Your Relationships with Professional Counseling</h2>
 							<a href="#" class="action-button">Subscribe Now</a>
 						</div>
 					</div>
@@ -30,7 +30,7 @@
 			</div>
 
 			<!-- Call to Action -->
-			<section class="section section-call-to-action">
+			<section class="section section-call-to-action fade-in">
 				<div class="container">
 					<div class="call-width">
 						<h2>“ At The Way we love, we offer personalized coaching and counseling services designed to meet the unique
@@ -41,7 +41,7 @@
 			<!-- /Call to Action -->
 
 			<!-- Blog -->
-			<section class="section section-blog">
+			<section class="section section-blog fade-in">
 				<div class="container">
 					<div class="section-header text-center">
 						<h5>What we do</h5>
@@ -118,12 +118,13 @@
             </section>
 
 			<!-- We Always -->
-			<section class="section section-we-always">
+			<section class="section section-we-always fade-in">
 				<div class="row mb-2">
 					<div class="col-sm-5 col-lg-6 p-0 sec-hide we-al-img"></div>
 					<div class="col-sm-12 col-lg-6 we-always-info">
-						<h2>About Elizabeth Hall</h2>
-						<p align="justify">Elizabeth Hall is a dedicated mental health professional with a Master of Arts in Clinical Mental
+						<h2>The Way We Love Relationship Counseling</h2>
+						<p>{{$aboutUsText}}</p>
+						{{-- <p align="justify">Elizabeth Hall is a dedicated mental health professional with a Master of Arts in Clinical Mental
                             Health Counseling and a Bachelor's Degree in Psychology. She is a Certified Transpersonal
                             Hypnotherapist (CTH) and holds the National Certified Counselor (NCC) credential from the
                             National Board for Certified Counselors (NBCC).</p>
@@ -131,7 +132,7 @@
                         <p>Specializing in couples and family therapy, Elizabeth’s educational background equips her to
                             provide systemic and relational therapeutic services for individuals, couples, and families. She
                             integrates her training as a transpersonal hypnotherapist for clients dealing with stress-related
-                            issues, utilizing tools like guided imagery to promote deep relaxation and mental well-being... <a href="#">learn more</a></p>
+                            issues, utilizing tools like guided imagery to promote deep relaxation and mental well-being... <a href="#">learn more</a></p> --}}
                             {{-- <p>The Way We Love Relationship Counseling is born out of a desire to serve and mend relationships. We strive to help individuals, couples, and families attain mental health through a lifestyle of self-care, identifying value systems that make them happy in their relationships</p> --}}
 						<div class="row">
 							<div class="col-sm-6 col-md-3 col-lg-6 we-info">
@@ -159,5 +160,119 @@
 				</div>
 			</section>
 
-			</div>
-	   @endsection
+
+	
+
+
+
+{{-- 
+<section class="why-choose-us-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Why You Should Choose Us</h2>
+        <p class="text-center mb-5">At The Way We Love, we are dedicated to helping you:</p>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="choose-us-item">
+                    <h5>Foster Secure Connections</h5>
+                    <p>Our counseling and coaching approach helps you build deeper emotional bonds and strengthen relationships.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="choose-us-item">
+                    <h5>Maintain Balance</h5>
+                    <p>We support you in creating and sustaining balance in your mental, emotional, and relational life.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="choose-us-item">
+                    <h5>Tailored Care</h5>
+                    <p>Every service we offer is customized to meet the unique needs of individuals, couples, families, and organizations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> --}}
+
+{{-- <!-- Hero/Banner Section -->
+<!-- Services Section -->
+<section class="services-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Services</h2>
+        <div class="row">
+            @foreach($services as $service)
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="{{ asset('storage/' . $service->image) }}" class="card-img-top" alt="{{ $service->name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $service->name }}</h5>
+                            <p class="card-text">{{ Str::limit($service->description, 100) }}</p>
+                            <a href="{{ route('services.show', $service->id) }}" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section> --}}
+
+<!-- Blog Section -->
+{{-- <section class="blog-section py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Latest Blogs</h2>
+        <div class="row">
+            @foreach($blogs as $blog)
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="{{ asset('storage/' . $blog->image) }}" class="card-img-top" alt="{{ $blog->title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $blog->title }}</h5>
+                            <p class="card-text">{{ Str::limit($blog->content, 100) }}</p>
+                            <a href="{{ route('blog.show', $blog->id) }}" class="btn btn-info">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section> --}}
+
+<!-- Testimonials Section --
+<section class="testimonials-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">What Our Clients Say</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p class="mb-0">"The counseling sessions have truly helped us restore balance in our relationship."</p>
+                    <footer class="blockquote-footer">John & Jane Doe</footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p class="mb-0">"An amazing service that changed my perspective on relationships!"</p>
+                    <footer class="blockquote-footer">Sarah Lee</footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p class="mb-0">"I feel much more connected with my partner, thanks to the expert guidance."</p>
+                    <footer class="blockquote-footer">Mike & Emma Smith</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call-to-Action Section -->
+<section class="cta-section py-5 bg-secondary text-white text-center mb-5">
+    <div class="container">
+        <h2>Ready to Begin Your Journey?</h2>
+        <p>Sign up today and let us help you create stronger, healthier relationships.</p>
+        <a href="{{ route('register') }}" class="btn btn-light btn-lg">Join Now</a>
+    </div>
+</section>
+
+@endsection
+
+			
