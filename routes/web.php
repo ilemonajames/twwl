@@ -56,6 +56,7 @@ use App\Livewire\WebsiteAdmin\Profile\ChangePasswordComponent;
 
 use App\Livewire\WebsiteAdmin\Faqs\NewFaqComponent;
 use App\Livewire\WebsiteAdmin\Faqs\FaqsComponent;
+use App\Livewire\WebsiteAdmin\Booking\AppointmentsComponent;
 
 use App\Livewire\WebsiteAdmin\Newsletters\SendNewsletterComponent;
 use App\Livewire\WebsiteAdmin\Newsletters\SentNewsletterComponent;
@@ -119,6 +120,9 @@ Route::post('subscriber', [NewsletterController::class, 'subscribe'])->name('sub
 
 Route::get('blog-details/{service}/details', [BlogController::class, 'details'])->name('blogs.details');
 Route::get('blogs', [BlogController::class, 'all_blogs'])->name('blogs.all');
+
+Route::get('program-details/{id}/details', [ProgramController::class, 'details'])->name('programs.details');
+Route::get('programs', [ProgramController::class, 'all_programs'])->name('programs.all');
 
 // Pages route
 // Route::get('/about', [PageController::class, 'about'])->name('about');
@@ -194,6 +198,7 @@ Route::middleware(['auth:sanctum','verified',])->group(function () {
 
         Route::get('/newsletter/snd',SendNewsletterComponent::class)->name('newsletter.send');
         Route::get('/sent-newsletter',SentNewsletterComponent::class)->name('newsletter.sent');
+        Route::get('/admin-bookings',AppointmentsComponent::class)->name('admin.bookings');
 
         Route::get('/frequently-asked-question/create',NewFaqComponent::class)->name('faqs.create');
         Route::get('/frequently-asked-question',FaqsComponent::class)->name('faqs.index');

@@ -105,7 +105,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="{{ route('dashboard') }}" class="waves-effect">
+                    <a href="{{ route('admin.bookings') }}" class="waves-effect">
                         <i class="mdi mdi-calendar"></i>
                         <span>Bookings</span>
                     </a>
