@@ -91,7 +91,7 @@
                             <!-- Blog Post -->
                             <div class="blog grid-blog">
                                 <div class="blog-image">
-                                    <a href="blog-details"><img class="img-fluid" src="{{ asset('/guest/images/uploads/' . $program->program_image) }}" alt="Post Image"></a>
+                                    <a href="{{ route('programs.details', $program->id) }}"><img class="img-fluid" src="{{ asset('/guest/images/uploads/' . $program->program_image) }}" alt="Post Image"></a>
                                 </div>
                                 <div class="blog-content">
                                     <ul class="entry-meta meta-item">

@@ -29,14 +29,14 @@
                     <!-- Blog Post -->
                     <div class="blog grid-blog">
                         <div class="blog-image">
-                            <a href="blog-details"><img class="img-fluid" src="{{ asset('/guest/images/uploads/' . $program->program_image) }}" alt="Post Image"></a>
+                            <a href="{{ route('programs.details', $program->id) }}"><img class="img-fluid" src="{{ asset('/guest/images/uploads/' . $program->program_image) }}" alt="Post Image"></a>
                         </div>
                         <div class="blog-content">
                             <ul class="entry-meta meta-item">
 
                                 <li><i class="far fa-clock"></i> {{ $program->created_at->format('d M Y')}}</li>
                             </ul>
-                            <h3 class="blog-title"><a href="blog-details">{{ $program->program_title }}</a></h3>
+                            <h3 class="blog-title"><a href="{{ route('programs.details', $program->id) }}">{{ $program->program_title }}</a></h3>
                             <p class="mb-0">{!! Str::limit(strip_tags($program->program_description), 100) !!}</p>
                             <div class="row mt-3 ml-2">
                                 <a class="btn btn-primary btn-sm"
