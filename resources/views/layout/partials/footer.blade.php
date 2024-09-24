@@ -3,7 +3,7 @@
 				<div class="footer-top">
 					<div class="container">
 						<h4>Sign Up For Newsletter</h4>
-						<p>Check out Join 12.000+ Subscribers and get a new discount coupon </p>
+						{{-- <p>Check out Join 12.000+ Subscribers and get a new discount coupon </p> --}}
 						<form method="post" action="{{ route('subscribe')}}" class="input-group">
                             @csrf
 							<input type="email" name="email" class="form-control" placeholder="Enter your email...">
@@ -68,7 +68,7 @@
 					</div>
 				</div>
 				<div class="copy-rights mt-5">
-					<p>All rights reserver @ The Way We Love © 2024 . All Rights Reserved</p>
+					<p>© 2024 The Way We Love Relationship Counseling</p>
 				</div>
 			</footer>
 			<!-- /Footer -->

@@ -38,10 +38,11 @@
                             <div class="contact-info info-2">
                                 <div class="section-title margin-bottom-50">
                                     <span class="sub-title theme-color text-uppercase"><b>Get In Touch</b></span>
-                                    <h2 class="section-title margin-top-5"><b>Feel Free To Contact Us</b></h2>
+                                    <h2 class="section-title margin-top-5"><b</b></h2>
                                     <hr>
                                 </div>
-
+<p>For booking consultations or sessions, please visit our <a href="{{ route('register') }}"> Booking link</a> or call
+    +1804-721-0983 to arrange an appointment.</p>
                                 <!-- Feature List -->
                                 <div class="feature-box-wrap f-list-4">
                                     <div class="feature-box-details">

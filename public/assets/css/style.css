@@ -90,9 +90,9 @@ Version      : 1.0
 	font-feature-settings: 'liga';
 }
 
-html {
+/* html {
     height: 100%;
-}
+} */
 body {
 	/* background-color: #fcf8f3;
 	color: #272b41;
@@ -8637,6 +8637,46 @@ span.call-duration.float-right {
     cursor: pointer;
     padding: 10px;
 }
+
+/* .card {
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 215, 0, 0.5); /* Gold with transparency *
+}
+
+.card:hover {
+    background-color: rgba(0, 128, 0, 0.5); /* Green with transparency *
+}
+
+.card:hover:nth-child(even) {
+    background-color: rgba(255, 215, 0, 0.5); /* Gold with transparency for even *
+}
+
+.card:hover:nth-child(odd) {
+    background-color: rgba(0, 128, 0, 0.5); /* Green with transparency for odd *
+} */
+
+.card {
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    position: relative; /* For positioning the icon */
+    color: #333; /* Default text color */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 128, 0, 0.8); /* Dark green background on hover */
+    color: #fff; /* Change text color for better readability */
+}
+
+.icon-container {
+    margin-bottom: 15px; /* Spacing between icon and title */
+}
+
 
 /*.slide {
     min-width: 100%;

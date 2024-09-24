@@ -7,19 +7,19 @@
 					<div class="slide" style="background-image: url({{asset('assets/img/banner/01.png')}});">
 						<div class="slide-content">
 							<h2>Transform Your Relationships with Professional Counseling</h2>
-							<a href="#" class="action-button">Subscribe Now</a>
+							<a href="#" class="action-button">Schedule Appointment</a>
 						</div>
 					</div>
 					<div class="slide" style="background-image: url({{asset('assets/img/banner/02.png')}});">
 						<div class="slide-content">
 							<h2>Love is the Way, Healing is the Journey</h2>
-							<a href="#" class="action-button">Subscribe Now</a>
+							<a href="#" class="action-button">Schedule Appointment</a>
 						</div>
 					</div>
 					<div class="slide" style="background-image: url({{asset('assets/img/banner/03.png')}});">
 						<div class="slide-content">
 							<h2>Join Us and Let Love Guide Your Way</h2>
-							<a href="#" class="action-button">Subscribe Now</a>
+							<a href="#" class="action-button">Schedule Appointment</a>
 						</div>
 					</div>
 				</div>
@@ -40,35 +40,8 @@
 			</section>
 			<!-- /Call to Action -->
 
-			<!-- Blog -->
-			<section class="section section-blog fade-in">
-				<div class="container">
-					<div class="section-header text-center">
-						<h5>What we do</h5>
-						<h2>Services</h2>
-					</div>
 
-					<div class="row">
-                        @foreach($services as $service)
-						<div class="col-md-4" >
-							<div class="card">
-								<a href="{{ route('services.details',$service->id)}}">
-									<img src="{{ asset('guest/images/uploads/' . $service->service_image) }}" style="width: 100%" alt="{{ $service->service_title }}">
-								</a>
-								<div class="card-body">
-								  	<h2 class="card-title blog-heading"><a href="{{ route('services.details',$service->id)}}"> {{ $service->service_title }}</a></h2>
-								  	<p class="blog-para">{!! Str::limit(strip_tags($service->service_description),100) !!}</p><br>
 
-                                      {{-- <a href="{{ route('client.book')}}" class="btn btn-danger">Book Appointment</a>
-                                      <a href="{{ route('services.details',$service->id)}}" class="btn btn-primary" style="float: right">Learn more</a> --}}
-								</div>
-
-							</div>
-						</div>
-                        @endforeach
-					</div>
-				</div>
-			</section>
 
            
 
@@ -89,7 +62,7 @@
                             integrates her training as a transpersonal hypnotherapist for clients dealing with stress-related
                             issues, utilizing tools like guided imagery to promote deep relaxation and mental well-being... <a href="#">learn more</a></p> --}}
                             {{-- <p>The Way We Love Relationship Counseling is born out of a desire to serve and mend relationships. We strive to help individuals, couples, and families attain mental health through a lifestyle of self-care, identifying value systems that make them happy in their relationships</p> --}}
-						<div class="row">
+						{{-- <div class="row">
 							<div class="col-sm-6 col-md-3 col-lg-6 we-info">
 								<h4>400+</h4>
 								<hr>
@@ -110,25 +83,53 @@
 								<hr>
 								<h5>Happy Clients</h5>
 							</div>
-						</div>
+						</div> --}}
 					</div>
 				</div>
 			</section>
 
 
 	
-			<div class="breadcrumb-bar mt-5">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col-md-12 col-12">
-                            <h2 align="center" class="breadcrumb-title">Our Programs</h2>
-                        </div>
-                    </div>
-                </div>
+			<!-- Services -->
+<section class="section section-blog fade-in">
+    <div class="container">
+        <div class="section-header text-center">
+            <h5>What we do</h5>
+            <h2>Services</h2>
+        </div>
+
+        <div class="row">
+            @foreach($services as $service)
+            <div class="col-md-4"><div class="card">
+				<div class="card-body">
+					<h2 class="card-title blog-heading"><a href="{{ route('services.details', $service->id) }}"> {{ $service->service_title }}</a></h2>
+					<p class="blog-para">{!! Str::limit(strip_tags($service->service_description), 100) !!}</p><br>
+					{{-- Optional buttons if needed --}}
+					<a href="{{ route('login')}}" class="btn btn-success">Book Appointment</a>
+                        <a href="{{ route('services.details', $service->id) }}" class="btn btn-primary" style="float: right">Learn more</a>
+				</div>
+			</div>
+			
+
+                
             </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+<!-- /Services -->
+			
             <!-- /Breadcrumb -->
-            <!-- Blog -->
-            <section class="section section-blog">
+ <section class="section section-blog">
+				<div class="breadcrumb-bar mt-5">
+					<div class="container-fluid">
+						<div class="row align-items-center">
+							<div class="col-md-12 col-12">
+								<h2 align="center" class="breadcrumb-title">Our Programs</h2>
+							</div>
+						</div>
+					</div>
+				</div>
                 <div class="container">
                     <div class="row">
                         @if(count($programs)>0)
