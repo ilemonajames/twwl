@@ -10,34 +10,35 @@
 				</div>
 			</section>
 			<!-- /Call to Action -->
-
-			<!-- We Always -->
-			<section class="section section-we-always">
-				<div class="row mb-2">
-					<div class="col-sm-5 col-lg-6 p-0 sec-hide we-al-img2"></div>
-					<div class="col-sm-12 col-lg-6 we-always-info">
-						<h2>About Elizabeth Hall</h2>
-						<p align="justify">Elizabeth Hall is a dedicated mental health professional with a Master of Arts in Clinical Mental
-                            Health Counseling and a Bachelor's Degree in Psychology. She is a Certified Transpersonal
-                            Hypnotherapist (CTH) and holds the National Certified Counselor (NCC) credential from the
-                            National Board for Certified Counselors (NBCC).</p>
-
-                        <p  align="justify">Specializing in couples and family therapy, Elizabeth’s educational background equips her to
-                            provide systemic and relational therapeutic services for individuals, couples, and families. She
-                            integrates her training as a transpersonal hypnotherapist for clients dealing with stress-related
-                            issues, utilizing tools like guided imagery to promote deep relaxation and mental well-being...</p>
-                            {{-- <p>The Way We Love Relationship Counseling is born out of a desire to serve and mend relationships. We strive to help individuals, couples, and families attain mental health through a lifestyle of self-care, identifying value systems that make them happy in their relationships</p> --}}
-						<p  align="justify">Elizabeth is also certified by the Virginia Board of Counseling as a Qualified Mental Health
-                            Professional for adults and children (QMHP-A/C) and is currently registered with the Board as a
-                            Resident in Counseling and Marriage & Family Therapy.<br>
-                            At the core of Elizabeth’s work is a commitment to mental health and well-being, and she
-                            believes that a person-centered approach is essential in any therapeutic relationship. By
-                            respecting the autonomy of her clients and working collaboratively with them, she tailors
-                            treatment to meet their unique needs. Her holistic approach considers the mind, body, and spirit
-                            connection, ensuring that her clients receive compassionate, individualized care.</p>
+			<section class="mb-12 mt-5 intro-section">
+				<div class="row ml-lg-5 mr-lg-5">
+					<div class="col-lg-12 col-xl-12 text-center">    
+						<h2 class="text-2xl font-semibold mb-4">The Way We Love Relationship Counseling</h2>
+						<p class="mb-4">The Way We Love Relationship Counseling was born out of a deep desire to serve and mend relationships. We are committed to helping individuals, couples, and families achieve mental health and well-being by fostering a lifestyle of self-care. Through our work, we guide clients in identifying the core values that bring them happiness and fulfillment in their relationships, empowering them to build stronger, more meaningful connections.</p>
 					</div>
 				</div>
 			</section>
+			<!-- We Always -->
+<section class="section section-we-always">
+	<div class="row mb-2">
+		<div class="col-sm-5 col-lg-5 p-5 sec-hide ml-4 we-al-im">
+			<figure class="zoom-container">
+				<img src="{{ asset('assets/img/we-always.png') }}" alt="Description of the image" class="img-fluid zoom-image" />
+				<figcaption class="text-center"><h3>Elizabeth Hall</h3> <p>CEO/Founder </p></figcaption>
+			</figure>
+		</div>
+		<div class="col-sm-6 col-lg-6 p-5 sec-hide">
+			<h2 class="mb-4">Who is Elizabeth Hall?</h2>
+            <p align="justify">
+                Specializing in couples and family therapy, Elizabeth’s educational background equips her to provide systemic and relational therapeutic services for individuals, couples, and families. She integrates her training as a transpersonal hypnotherapist for clients dealing with stress-related issues, utilizing tools like guided imagery to promote deep relaxation and mental well-being.
+            </p>
+            <p align="justify">
+                Elizabeth is also certified by the Virginia Board of Counseling as a Qualified Mental Health Professional for adults and children (QMHP-A/C) and is currently registered with the Board as a Resident in Counseling and Marriage & Family Therapy. At the core of Elizabeth’s work is a commitment to mental health and well-being, and she believes that a person-centered approach is essential in any therapeutic relationship. By respecting the autonomy of her clients and working collaboratively with them, she tailors treatment to meet their unique needs. Her holistic approach considers the mind, body, and spirit connection, ensuring that her clients receive compassionate, individualized care.
+            </p>
+        </div>
+    </div>
+</section>
+
 			<!-- /We Always --><br><br>
 
             <section id="feature-section" class="feature-section pad-none pad-bottom-100 broken-top-1500 pad-bottom-md-none ">

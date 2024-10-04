@@ -375,6 +375,30 @@ function updateSlider() {
     document.querySelector('.slider').style.transform = `translateX(-${index * 100}%)`;
 }
 
+    document.addEventListener('DOMContentLoaded', function() {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider .slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = (i === index) ? 'block' : 'none';
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Initially show the first slide
+        showSlide(currentSlide);
+
+        // Change slide every 5 seconds
+        setInterval(nextSlide, 5000);
+    });
+
+
 
 /* Example JavaScript to activate on scroll */
 window.addEventListener('scroll', function() {

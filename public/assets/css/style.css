@@ -8583,7 +8583,7 @@ span.call-duration.float-right {
 
 .slide {
     min-width: 100%;
-    height: 550px;
+    height: 650px;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -8678,7 +8678,7 @@ span.call-duration.float-right {
 }
 
 
-/*.slide {
+.slide {
     min-width: 100%;
     height: 650px;
     background-size: cover;
@@ -8714,9 +8714,276 @@ span.call-duration.float-right {
     cursor: pointer;
     padding: 10px;
 } */
+ 
+/* 
+.services-item {
+    position: relative;
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease; /* Smooth transition for the size change 
+    width: 250px; /* Set initial width 
+    height: 250px; /* Set initial height 
+}
+
+.services-item:hover {
+    transform: scale(1.1); /* Scale the card up on hover 
+}
+
+.services-img {
+    overflow: hidden; /* Hide overflow to maintain the size 
+    position: relative; /* Position relative for absolute children 
+}
+
+.services-img img {
+    transition: filter 0.3s ease; /* Smooth transition for blur effect 
+}
+
+.services-item:hover .services-img img {
+    filter: blur(5px); /* Blur the image on hover 
+}
+
+.service-text {
+    position: absolute; /* Position text overlay 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text 
+    opacity: 0; /* Start hidden 
+    transition: opacity 0.3s ease; /* Smooth transition for opacity 
+    text-align: center; /* Center align text 
+    color: white; /* Change text color for better visibility 
+}
+
+.services-item:hover .service-text {
+    opacity: 1; /* Show text on hover 
+}
+.service-text {
+    position: absolute; /* Keeps text overlay centered 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text 
+    opacity: 0; /* Start hidden 
+    transition: opacity 0.3s ease; /* Smooth transition for opacity 
+    text-align: center; /* Center align text 
+    color: white; /* Change text color for better visibility 
+}
+
+.services-item:hover .service-text {
+    opacity: 1; /* Show text on hover 
+}
+ */
+ .services-item {
+    position: relative;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    padding: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.services-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.services-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.services-item {
+    position: relative;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    padding: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.services-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.services-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.services-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.services-item:hover .services-img {
+    opacity: 1;
+}
+
+.services-item:hover .service-content {
+    background: rgba(255, 255, 255, 0.8);
+}
 
 
+.button-group {
+    margin-top: 10px; /* Space between text and buttons */
+}
 
+.btn {
+    display: inline-block;
+    margin: 5px; /* Space between buttons */
+    padding: 10px 15px; /* Padding for buttons */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background change */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Primary button color */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Secondary button color */
+}
+
+.btn:hover {
+    background-color: darken(#007bff, 10%); /* Darken primary color on hover */
+}
+
+.btn-secondary:hover {
+    background-color: darken(#6c757d, 10%); /* Darken secondary color on hover */
+}
+.section-header h2 {
+    font-size: 2rem; /* Adjust size as needed */
+}
+
+.service-text h6 {
+    margin: 1rem 0;
+    font-size: 1.25rem; /* Size of the service title */
+}
+
+.service-text p {
+    font-size: 0.9rem;
+    color: #666; /* Muted color for description */
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px; /* Rounded corners for buttons */
+    margin: 0 5px;
+    font-size: 0.8rem; /* Smaller button text */
+}
+
+.btn-outline-primary {
+    border: 2px solid #007bff;
+    color: #007bff;
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background: #007bff;
+    color: white;
+}
+
+.btn-outline-secondary {
+    border: 2px solid #6c757d;
+    color: #6c757d;
+    background: transparent;
+}
+
+.btn-outline-secondary:hover {
+    background: #6c757d;
+    color: white;
+}
+
+.services-item {
+    border: 1px solid #eaeaea; /* Light border for items */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth effect */
+}
+
+.services-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+/* ZOOM IMAGE */
+.zoom-container {
+    overflow: hidden; /* Prevent image from overflowing */
+    position: relative; /* Enable positioning for absolute elements */
+    background-color: #f9f9f9; /* Background color for the container */
+    border: 2px solid #ddd; /* Border around the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    padding: 10px; /* Padding inside the container */
+    transition: box-shadow 0.3s ease; /* Transition for shadow on hover */
+}
+
+.zoom-container:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.zoom-image {
+    width: 100%; /* Fit image to container */
+    transition: transform 0.3s ease; /* Animation for zoom effect */
+}
+
+.zoom-image:hover {
+    transform: scale(1.1); /* Zoom in on hover */
+}
+
+.intro-section {
+    background-color: #f0f4f8; /* Light background color */
+    border-left: 5px solid #007bff; /* Blue left border for emphasis */
+    padding: 20px; /* Padding for spacing */
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+/* FADE IN ANIMATION */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
     .slide-content {
         font-size: 1.2rem;

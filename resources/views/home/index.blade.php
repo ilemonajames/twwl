@@ -94,8 +94,8 @@
 <section class="section section-blog fade-in">
     <div class="container">
         <div class="section-header text-center">
-            <h5>What we do</h5>
-            <h2>Services</h2>
+            <h3>What we do</h3>
+            {{-- <h2>Services</h2> --}}
         </div>
 
         <div class="row">
@@ -134,7 +134,7 @@
                     <div class="row">
                         @if(count($programs)>0)
                         @foreach ($programs as $program)
-                        <div class="col-md-4 col-sm-12">
+                        <div class="col-sm-12 col-md-4 col-lg-4" style="margin-bottom: 20px;">
 
                             <!-- Blog Post -->
                             <div class="blog grid-blog">
