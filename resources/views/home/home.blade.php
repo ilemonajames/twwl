@@ -146,7 +146,7 @@
             <h2>The Way We Love Relationship Counseling</h2>
                 <p>The Way We Love Relationship Counseling is born out of a desire to serve and mend relationships. We strive to help individuals, couples, and families attain mental health through a lifestyle of self-care, identifying value systems that make them happy in their relationships</p>
             <aside class="achievements">
-    <h2>Our Achievements</h2>
+    <!--<h2>Our Achievements</h2>
     <div class="row">
         <div class="col-sm-6 col-md-3 col-lg-6 we-info">
             <h4>50+</h4>
@@ -171,7 +171,7 @@
     </div>
             </aside>
 
-        </div>
+        </div>-->
     </div>
 </section>
 <!-- /We Always -->
@@ -507,7 +507,7 @@
 </section>
 <!-- /Call to Action -->
 
-<!-- Blog -->
+<!-- Blog --
 <section class="section section-blog">
     <div class="container">
         <div class="section-header text-center">
