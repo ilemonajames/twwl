@@ -507,7 +507,7 @@
 </section>
 <!-- /Call to Action -->
 
-<!-- Blog --
+<!-- Blog -->
 <section class="section section-blog">
     <div class="container">
         <div class="section-header text-center">
@@ -516,7 +516,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-7">
+           <!-- <div class="col-md-7">
                 <div class="media">
                     <a href="blog-details">
                         <img src="./assets/img/blog-01.png" alt="Blog">
@@ -551,7 +551,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </section>
 <!-- /Blog -->
