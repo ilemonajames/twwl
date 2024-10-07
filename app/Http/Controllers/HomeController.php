@@ -14,8 +14,8 @@ class HomeController extends Controller
     public function index()
     {
         // Fetch featured services, for example, the top 3 services
-        $services = Service::take(5)->get();
-        $programs = Program::take(5)->get();
+        $services = Service::take(3)->get();
+        $programs = Program::take(3)->get();
 
         // Static banner and about us content
         $bannerText = "Welcome to The Way We Love Relationship Counseling";
