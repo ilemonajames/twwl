@@ -18,6 +18,12 @@ return new class extends Migration
             $table->uuid('program_id')->constrained()->onDelete('cascade');
             $table->date('appointment_date');
             $table->time('appointment_time');
+            $table->string('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
             $table->string('status')->default('pending');
             $table->timestamps();
         });

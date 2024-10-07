@@ -31,7 +31,7 @@
             </div>
         </div>
     </div> --}}
-    <div class="hero-section">
+    <div class="hero-section fade-in">
         <div class="slider-container">
             <div class="slider">
                 <div class="slide" style="background-image: url({{ asset('assets/img/banner/banner1.jpg') }});">
@@ -65,8 +65,9 @@
 <section class="section section-call-to-action fade-in mt-5">
     <div class="container">
         <div class="call-width">
+            <h1 class="text-center text-uppercase">Talk to Someone,Talk to Us today!</h1>
             <h2>At The Way We Love, we offer personalized coaching and counseling services designed to meet your unique needs.</h2>
-            <a href="#" class="btn btn-lg mt-3 action-button">Get Started</a>
+            <a href="/booking" class="btn btn-lg mt-3 action-button">Get Started</a>
         </div>
     </div>
 </section>
@@ -120,7 +121,7 @@
                             <h6 class="font-weight-bold">{{ $service->service_title }}</h6>
                             <p class="text-muted">{{ strlen(strip_tags($service->service_description)) > 100 ? substr(strip_tags($service->service_description), 0, 300) . '...' : strip_tags($service->service_description) }}</p> <!-- Strip HTML tags -->
                             <div class="button-group mt-3">
-                                <a href="booking" class="btn btn-outline-primary btn-sm">Book Now</a>
+                                <a href="/booking" class="btn action-button btn-lg">Book a session</a>
                                 <a href="learn-more" class="btn btn-outline-secondary btn-sm">Learn More</a>
                             </div>
                         </div>
@@ -176,19 +177,20 @@
 </section>
 <!-- /We Always -->
 
-<!-- Counsellors --
-<section class="section section-counsellors">
+<!-- Counsellors -->
+{{-- <section class="section section-counsellors">
     <div class="container">
         <div class="section-header text-center">
-            <h5>OUR PROFESSIONAL TEAM</h5>
-            <h2>Counsellors</h2>
+            <h5>Our Programs</h5>
+            {{-- <h2>Counsellors</h2> --
         </div>
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <!-- Slider --
+                <!-- Slider -->
                 <div class="counsellors-slider slider">
                 
-                    -- Slider Item --
+                   <!-- Slider Item -->
+                   @foreach ($programs as $program)
                     <div class="services-item text-center">
                         <div class="services-img">
                             <img src="assets/img/counsellor-01.png" class="img-fluid" alt="Services">
@@ -204,293 +206,62 @@
                                             <i class="fas fa-star"></i>
                                         </div>
                                         <p class="rating-rev">3.2</p>
-                                    </div>
+                                    </div> 
                                     <div class="bott-sec">
                                         <a href="councellor-profile">
-                                            Richard Paine
+                                            <h5>{{ $program->program_name }}</h5>
                                         </a>
-                                        <h5>200 Counciling Done</h5>
-                                        <h6>Self-Esteem Issues</h6>
-                                        <h4>$200 / Hr</h4>
+                                        <h5>{{ $program->program_description }}</h5>
+                                        {{-- <h6>Self-Esteem Issues</h6>
+                                        <h4>$200 / Hr</h4> --
                                     </div>
                                 </div>											
                             </div>
                         </div>
                         <a href="booking" class="btn btn-primary mt-4">Book Now</a>
                     </div>	
-                    -- /Slider Item --
-                    
-                    -- Slider Item --
-                    <div class="services-item text-center">
-                        <div class="services-img">
-                            <img src="assets/img/counsellor-02.png" class="img-fluid" alt="Services">
-                            <div class="counsellors-widget" onclick="redirectDetail()">
-                                <div class="counsellor-info">
-                                    <div class="top-sec">
-                                        <div class="star-rate">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <p class="rating-rev">3.2</p>
-                                    </div>
-                                    <div class="bott-sec">
-                                        <a href="councellor-profile">
-                                            Richard Paine
-                                        </a>
-                                        <h5>200 Counciling Done</h5>
-                                        <h6>Self-Esteem Issues</h6>
-                                        <h4>$200 / Hr</h4>
-                                    </div>
-                                </div>											
-                            </div>
-                        </div>
-                        <a href="booking" class="btn btn-primary mt-4">Book Now</a>
-                    </div>				
-                    -- /Slider Item --
-                    
-                    -- Slider Item --
-                    <div class="services-item text-center">
-                        <div class="services-img">
-                            <img src="assets/img/counsellor-03.png" class="img-fluid" alt="Services">
-                            <div class="counsellors-widget" onclick="redirectDetail()">
-                                <div class="counsellor-info">
-                                    <div class="top-sec">
-                                        <div class="star-rate">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <p class="rating-rev">3.2</p>
-                                    </div>
-                                    <div class="bott-sec">
-                                        <a href="councellor-profile">
-                                            Richard Paine
-                                        </a>
-                                        <h5>200 Counciling Done</h5>
-                                        <h6>Self-Esteem Issues</h6>
-                                        <h4>$200 / Hr</h4>
-                                    </div>
-                                </div>											
-                            </div>
-                        </div>
-                        <a href="booking" class="btn btn-primary mt-4">Book Now</a>
-                    </div>					
-                    <!-- /Slider Item -->
-                    
-                    <!-- Slider Item --
-                    <div class="services-item text-center">
-                        <div class="services-img">
-                            <img src="assets/img/counsellor-04.png" class="img-fluid" alt="Services">
-                            <div class="counsellors-widget" onclick="redirectDetail()">
-                                <div class="counsellor-info">
-                                    <div class="top-sec">
-                                        <div class="star-rate">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <p class="rating-rev">3.2</p>
-                                    </div>
-                                    <div class="bott-sec">
-                                        <a href="councellor-profile">
-                                            Richard Paine
-                                        </a>
-                                        <h5>200 Counciling Done</h5>
-                                        <h6>Self-Esteem Issues</h6>
-                                        <h4>$200 / Hr</h4>
-                                    </div>
-                                </div>											
-                            </div>
-                        </div>
-                        <a href="booking" class="btn btn-primary mt-4">Book Now</a>
-                    </div>					
-                    <!-- /Slider Item -->
-                    
-                    <!-- Slider Item --
-                    <div class="services-item text-center">
-                        <div class="services-img">
-                            <img src="assets/img/counsellor-05.png" class="img-fluid" alt="Services">
-                            <div class="counsellors-widget" onclick="redirectDetail()">
-                                <div class="counsellor-info">
-                                    <div class="top-sec">
-                                        <div class="star-rate">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <p class="rating-rev">3.2</p>
-                                    </div>
-                                    <div class="bott-sec">
-                                        <a href="councellor-profile">
-                                            Richard Paine
-                                        </a>
-                                        <h5>200 Counciling Done</h5>
-                                        <h6>Self-Esteem Issues</h6>
-                                        <h4>$200 / Hr</h4>
-                                    </div>
-                                </div>											
-                            </div>
-                        </div>
-                        <a href="booking" class="btn btn-primary mt-4">Book Now</a>	
-                    </div>				
-                    -- /Slider Item --
-
-                    -- Slider Item --
-                    <div class="services-item text-center">
-                        <div class="services-img">
-                            <img src="assets/img/counsellor-02.png" class="img-fluid" alt="Services">
-                            <div class="counsellors-widget" onclick="redirectDetail()">
-                                <div class="counsellor-info">
-                                    <div class="top-sec">
-                                        <div class="star-rate">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <p class="rating-rev">3.2</p>
-                                    </div>
-                                    <div class="bott-sec">
-                                        <a href="councellor-profile">
-                                            Richard Paine
-                                        </a>
-                                        <h5>200 Counciling Done</h5>
-                                        <h6>Self-Esteem Issues</h6>
-                                        <h4>$200 / Hr</h4>
-                                    </div>
-                                </div>											
-                            </div>
-                        </div>
-                        <a href="booking" class="btn btn-primary mt-4">Book Now</a>
-                    </div>				
-                -- /Slider Item --
-                    
-                </div>
-                <!-- /Slider -->
-                
+                    @endforeach
+                           
             </div>
         </div>
     </div>   
 </section>	 
-<!-- /Counsellors -->
+<!-- /Counsellors --> --}}
 
 <!-- Reviews -->
 <section class="section section-reviews">
     <div class="container">
         <div class="section-header text-center">
-            <h5>What happy clients says</h5>
-            <h2>Reviews</h2>
+            <h5>Our Packages</h5>
+            {{-- <h2>Reviews</h2> --}}
         </div>
 
         <div class="row mt-8">
-            <div class="col-md-6 col-lg-4">
+            @foreach ($programs as $program)
+            <div class="col-md-6 col-lg-4 mt-4 mb-4">
                 <div class="card">
                     <div class="top-img">
-                        <img src="./assets/img/review-01.png" alt="Review" />
+                       <i class="{{ $program->icon_class }} fa-2x" ></i>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Davis Payerf</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat orci enim, mattis nibh aliquam dui, nibh faucibus aenean. Eget volutpat</p>
+                        <h5 class="card-title">{{ $program->program_title }}</h5>
+                        <p class="card-text">{{ $program->program_description }}</p>
                     </div>
                     <div class="card-footer">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <img src="./assets/img/review-user.png" alt="User" />
-                                <div>
-                                    <h5>James Foster</h5>
-                                    <h6>Young Adult Intensive</h6>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <div class="star-rate">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="rating-rev">3.2</p>
+                        <div class="">
+                            
+                            
+                            
+                                <a href="/boking" class="btn action-button btn-block">Book Now</a>
+                            
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            
+            @endforeach
 
-            <div class="col-md-6 col-lg-4">
-                <div class="card">
-                    <div class="top-img">
-                        <img src="./assets/img/review-01.png" alt="Review" />
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Davis Payerf</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat orci enim, mattis nibh aliquam dui, nibh faucibus aenean. Eget volutpat</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <img src="./assets/img/review-user.png" alt="User" />
-                                <div>
-                                    <h5>James Foster</h5>
-                                    <h6>Young Adult Intensive</h6>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <div class="star-rate">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="rating-rev">3.2</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card">
-                    <div class="top-img">
-                        <img src="./assets/img/review-01.png" alt="Review" />
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Davis Payerf</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat orci enim, mattis nibh aliquam dui, nibh faucibus aenean. Eget volutpat</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <img src="./assets/img/review-user.png" alt="User" />
-                                <div>
-                                    <h5>James Foster</h5>
-                                    <h6>Young Adult Intensive</h6>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <div class="star-rate">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="rating-rev">3.2</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
         </div>
     </div>
 </section>
@@ -501,7 +272,7 @@
     <div class="container">
         <div class="call-width">
             <h2>“ If You are in Trouble Need our Help, Contact Us Immediately, We are Support 24/7 ”</h2>
-            <a href="map-list" class="btn btn-secondary">OUR SERVICES</a>
+            <a href="map-list" class="btn btn-lg mt-3 action-button">OUR SERVICES</a>
         </div>					
     </div>
 </section>

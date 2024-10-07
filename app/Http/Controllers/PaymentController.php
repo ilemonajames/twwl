@@ -11,7 +11,7 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        //
+        //list all applicants payment status
     }
 
     /**

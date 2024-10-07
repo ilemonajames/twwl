@@ -53,5 +53,40 @@ class ServiceSeeder extends Seeder
             'service_description' => "Our services extend to organizations seeking to support their teams' mental health and well-being. We offer workshops, coaching, and curriculum development focused on improving workplace dynamics, team cohesion, and emotional wellness."
         ]);
 
+        // Service 4: Workshops & Seminars for Organizations
+        Service::create([
+            'service_icon' => 'workshops.png',
+            'service_image' => 'workshops.jpg',
+            'service_title' => 'Workshops & Seminars for Organizations',
+            'service_description' => "
+                We work with organizations to provide workshops and seminars that promote mental health and emotional wellness in the workplace. Our sessions are tailored to meet the specific needs of your organization, helping improve team cohesion and overall workplace dynamics.
+                <h4>Key Offerings:</h4>
+                <ul>
+                    <li>Workshops on mental health</li>
+                    <li>Team cohesion and workplace dynamics</li>
+                    <li>Emotional wellness training</li>
+                </ul>
+                
+            ",
+        ]);
+
+        // Service 5: Hypnotherapy Services
+        Service::create([
+            'service_icon' => 'hypnotherapy.png',
+            'service_image' => 'hypnotherapy.jpg',
+            'service_title' => 'Hypnotherapy Services',
+            'service_description' => "
+                We offer hypnotherapy services focused on managing stress, improving sleep, and fostering personal growth. These sessions help individuals reach a deep state of relaxation, allowing the subconscious mind to embrace positive change.
+                <h4>Key Offerings:</h4>
+                <ul>
+                    <li>Stress management and relaxation</li>
+                    <li>Sleep improvement</li>
+                    <li>Personal growth and goal setting</li>
+                </ul>
+               
+            ",
+        ]);
+    
+
     }
 }

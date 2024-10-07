@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Program;
+use App\Models\Service;
 
 class BookingController extends Controller
 {
@@ -11,8 +12,9 @@ class BookingController extends Controller
     public function showBookingForm()
     {
         $programs = Program::all();
+        $services = Service::all();
         //dd($programs); // Get all available programs
-        return view('booking.booking', ['programs' => $programs]); // Return the view for the booking form'); // Return the view for the booking form
+        return view('booking.booking', ['programs' => $programs], ['services' => $services]); // Return the view for the booking form'); // Return the view for the booking form
     }
 
     // Handle booking as a guest
@@ -26,6 +28,8 @@ class BookingController extends Controller
         ]);
 
         // Perform necessary actions to save the booking
+        
+
         // For example, saving it to a database or sending a confirmation email
         
         // Redirect to success page

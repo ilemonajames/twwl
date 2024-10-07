@@ -120,12 +120,12 @@
 <!-- /Services -->
 			
             <!-- /Breadcrumb -->
- <section class="section section-blog">
+ {{-- <section class="section section-blog">
 				<div class="breadcrumb-bar mt-5">
 					<div class="container-fluid">
 						<div class="row align-items-center">
 							<div class="col-md-12 col-12">
-								<h2 align="center" class="breadcrumb-title">Our Programs</h2>
+								<h2 class="breadcrumb-title text-center">Our Programs</h2>
 							</div>
 						</div>
 					</div>
@@ -153,7 +153,7 @@
                                         href="{{ route('client.book')}}">Book Now</a> || <a class="btn btn-success btn-sm"
                                             href="{{ route('programs.details', $program->id) }}">Learn more</a>
                                     </div>
-                                    {{-- <br><a href="{{ route('blogs.details', $blog->id) }}">Learn more</a></p> --}}
+                                    {{-- <br><a href="{{ route('blogs.details', $blog->id) }}">Learn more</a></p> --
                                 </div>
                             </div>
                             <!-- /Blog Post -->
@@ -163,7 +163,7 @@
                         @endif
                     </div>
                 </div>
-            </section>
+            </section> --}}
 
 
 {{-- 
