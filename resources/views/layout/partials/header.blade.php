@@ -10,7 +10,7 @@
 	@endif
 	<!-- /Loader  -->
 <!-- Main Wrapper -->
-		<div class="main-wrapper">
+		<div class="main-wrapper ">
 			<!-- Top Header -->
 			<div class="top-header">
 				<div class="container-fluid">
@@ -76,7 +76,7 @@
 			<!-- Top Header -->
 
 			<!-- Header -->
-			<header class="header">
+			<header class="header ml-auto">
 				<nav class="navbar navbar-expand-lg header-nav">
 					<div class="navbar-header">
 						<a id="mobile_btn" href="javascript:void(0);">
@@ -90,7 +90,7 @@
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
 							<a href="{{ route('home')}}" class="menu-logo">
-								<img src="{{ asset('assets/img/logo1.png')}}" class="img-fluid" alt="Logo">
+								<img src="{{ asset('assets/img/logo2.png')}}" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);">
 								<i class="fas fa-times"></i>
@@ -109,10 +109,19 @@
 							{{-- <li class="{{ Request::is('find-counselor') ? 'active' : '' }}">
 								<a href="#"><b>Mission</b></a>
 							</li> --}}
-                            <li class="{{ Request::is('blogs') ? 'active' : '' }}">
-								<a href="{{ route('blogs.all')}}"><b>Blog</b></a>
-								<ul class="sub-menu"><li class="sub-menu-item">Podcast</li><li class="sub-menu-item">Live</li></ul>
+							<li class="has-submenu {{ Request::is('resources') ? 'active' : '' }} "><a href="#"><b>Resources</b></a>
+								<ul class="submenu">
+									<li><a href="{{ route('resources.all') }}">All Resources</a></li>
+									<li><a href="{{ route('resources.videos') }}">Videos</a></li>	
+									<li><a href="{{ route('resources.podcasts') }}">Podcasts</a></li>
+									<li><a href="{{ route('resources.books') }}">Books</a></li>
+									<li><a href="{{ route('resources.articles') }}">Articles</a></li>
+								</ul>
 							</li>
+                            {{-- <li class="sub-menu {{ Request::is('blogs') ? 'active' : '' }} ">
+								<a href="{{ route('blogs.all')}}"><b>Blog</b></a>
+								<ul class="sub-menu"><li class="active">Podcast</li><li class="sub-menu-item">Videos</li></ul>
+							</li> --}}
 
                             <li class="{{ Request::is('programs') ? 'active' : '' }}">
 								<a href="{{ route('programs.all')}}"><b>Program</b></a>

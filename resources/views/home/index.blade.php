@@ -7,19 +7,19 @@
 					<div class="slide" style="background-image: url({{asset('assets/img/banner/01.png')}});">
 						<div class="slide-content">
 							<h2>Transform Your Relationships with Professional Counseling</h2>
-							<a href="#" class="action-button">Schedule Appointment</a>
+							<a href="/booking" class="action-button">Schedule Appointment</a>
 						</div>
 					</div>
 					<div class="slide" style="background-image: url({{asset('assets/img/banner/02.png')}});">
 						<div class="slide-content">
 							<h2>Love is the Way, Healing is the Journey</h2>
-							<a href="#" class="action-button">Schedule Appointment</a>
+							<a href="/booking" class="action-button">Schedule Appointment</a>
 						</div>
 					</div>
 					<div class="slide" style="background-image: url({{asset('assets/img/banner/03.png')}});">
 						<div class="slide-content">
 							<h2>Join Us and Let Love Guide Your Way</h2>
-							<a href="#" class="action-button">Schedule Appointment</a>
+							<a href="/booking" class="action-button">Schedule Appointment</a>
 						</div>
 					</div>
 				</div>

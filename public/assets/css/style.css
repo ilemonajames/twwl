@@ -2767,7 +2767,7 @@ html.menu-opened body {
     background-repeat: no-repeat;
     width: 100%;
     background-position: center;
-    background-size: contain;
+    background-size:auto;
 }
 .we-al-img2 {
 	background-image: url(../img/we-always.png);

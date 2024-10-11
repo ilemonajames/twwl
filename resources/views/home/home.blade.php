@@ -31,7 +31,7 @@
             </div>
         </div>
     </div> --}}
-    <div class="hero-section fade-in">
+    <div class="hero-section fade-in mb-5">
         <div class="slider-container">
             <div class="slider">
                 <div class="slide" style="background-image: url({{ asset('assets/img/banner/banner1.jpg') }});">
@@ -65,7 +65,7 @@
 <section class="section section-call-to-action fade-in mt-5">
     <div class="container">
         <div class="call-width">
-            <h1 class="text-center text-uppercase">Talk to Someone,Talk to Us today!</h1>
+            {{-- <h1 class="text-center text-uppercase">Talk to Someone,Talk to Us today!</h1> --}}
             <h2>At The Way We Love, we offer personalized coaching and counseling services designed to meet your unique needs.</h2>
             <a href="/booking" class="btn btn-lg mt-3 action-button">Get Started</a>
         </div>
@@ -141,8 +141,13 @@
 
 <!-- We Always -->
 <section class="section section-we-always">
-    <div class="row m-0">
-        <div class="col-sm-5 col-lg-7 p-0 sec-hide we-al-img"></div>
+    <div class="row ml-5">
+        {{-- <div class="col-sm-5 col-lg-7 p-0 sec-hide we-al-img"> --}}
+            <div class="col-sm-5 col-lg-7 p-0 sec-hide">
+            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+    <dotlottie-player src="https://lottie.host/d84e8303-61c2-4b2f-b6a7-7d9f654ee3b4/La5A65T3yD.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+        </div>
         <div class="col-sm-12 col-lg-5 we-always-info">
             <h2>The Way We Love Relationship Counseling</h2>
                 <p>The Way We Love Relationship Counseling is born out of a desire to serve and mend relationships. We strive to help individuals, couples, and families attain mental health through a lifestyle of self-care, identifying value systems that make them happy in their relationships</p>

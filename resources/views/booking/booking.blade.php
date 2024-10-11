@@ -23,9 +23,9 @@
 			<div class="content">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-lg-6 col-xl-6">
+            <div class="col-md-6 col-lg-6 col-xl-6 text-center">
                 <div class="schedule-header">
-                    <h4>Booking</h4>
+                    <h2>Book Appointment</h2>
                     <p>Welcome to a safe space where transformation begins. Our mission is to provide compassionate counselling services tailored to adults navigating life's challenges. Fill out the form and we will contact you with an appointment. </p>
                 </div>
                 <!-- Schedule Widget -->
@@ -37,7 +37,7 @@
             <div class="col-md-6 col-lg-6 col-xl-6">
                 <!-- Program Selection Form -->
                 <div class="program-selection">
-                    <h4 class="mb-3">Select Plan</h4>
+                    <h4 class="mb-3">Select a Package</h4>
                     <form id="programForm" action="/booking" method="POST">
                         
                         
