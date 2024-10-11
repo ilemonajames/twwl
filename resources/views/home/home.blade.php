@@ -143,12 +143,11 @@
 <section class="section section-we-always">
     <div class="row ml-5">
         {{-- <div class="col-sm-5 col-lg-7 p-0 sec-hide we-al-img"> --}}
-            <div class="col-sm-5 col-lg-7 p-0 sec-hide we-al-img">
-            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+            <div class="col-sm-5 col-lg-5 p-0 sec-hide we-al-img">
 
-    <dotlottie-player src="https://lottie.host/d84e8303-61c2-4b2f-b6a7-7d9f654ee3b4/La5A65T3yD.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+    {{-- <dotlottie-player src="https://lottie.host/d84e8303-61c2-4b2f-b6a7-7d9f654ee3b4/La5A65T3yD.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player> --}}
         </div>
-        <div class="col-sm-12 col-lg-5 we-always-info">
+        <div class="col-sm-12 col-lg-6 we-always-info">
             <h2>The Way We Love Relationship Counseling</h2>
                 <p>The Way We Love Relationship Counseling is born out of a desire to serve and mend relationships. We strive to help individuals, couples, and families attain mental health through a lifestyle of self-care, identifying value systems that make them happy in their relationships</p>
             <aside class="achievements">

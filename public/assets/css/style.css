@@ -2763,11 +2763,11 @@ html.menu-opened body {
 	background-color: #FEF2EE;
 }
 .we-al-img {
-	background-image: url(../img/we-always2.png);
+	background-image: url(../img/banner-bottom-01.png);
     background-repeat: no-repeat;
     width: 100%;
     background-position: center;
-    background-size:auto;
+    background-size:cover;
 }
 .we-al-img2 {
 	background-image: url(../img/we-always.png);
