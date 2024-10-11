@@ -59,18 +59,17 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Call to Action Section -->
   <!-- Call to Action Section -->
-<section class="section section-call-to-action fade-in mt-5">
+{{-- <section class="section section-call-to-action fade-in mt-5">
     <div class="container">
         <div class="call-width">
-            {{-- <h1 class="text-center text-uppercase">Talk to Someone,Talk to Us today!</h1> --}}
             <h2>At The Way We Love, we offer personalized coaching and counseling services designed to meet your unique needs.</h2>
             <a href="/booking" class="btn btn-lg mt-3 action-button">Get Started</a>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- Services -->
    {{-- <section class="section section-services">
     <div class="container">
@@ -100,10 +99,10 @@
                     </div>
                     @endforeach
                  </div>
-               
+
             </div>
         </div>
-    </div>   
+    </div>
 </section>	  --}}
 <!-- Services Section -->
 <!-- Services Section -->
@@ -126,8 +125,8 @@
                             </div>
                         </div>
                         <div class="services-img">
-                            <img src="{{ asset('assets/img/services/' . $service->service_image) }}" 
-                                 class="img-fluid" 
+                            <img src="{{ asset('assets/img/services/' . $service->service_image) }}"
+                                 class="img-fluid"
                                  alt="Service - {{ $service->service_title }}">
                         </div>
                     </div>
@@ -192,13 +191,13 @@
             <div class="col-md-12">
                 <!-- Slider -->
                 <div class="counsellors-slider slider">
-                
+
                    <!-- Slider Item -->
                    @foreach ($programs as $program)
                     <div class="services-item text-center">
                         <div class="services-img">
                             <img src="assets/img/counsellor-01.png" class="img-fluid" alt="Services">
-                                                                
+
                             <div class="counsellors-widget" onclick="redirectDetail()">
                                 <div class="counsellor-info">
                                     <div class="top-sec">
@@ -210,7 +209,7 @@
                                             <i class="fas fa-star"></i>
                                         </div>
                                         <p class="rating-rev">3.2</p>
-                                    </div> 
+                                    </div>
                                     <div class="bott-sec">
                                         <a href="councellor-profile">
                                             <h5>{{ $program->program_name }}</h5>
@@ -219,17 +218,17 @@
                                         {{-- <h6>Self-Esteem Issues</h6>
                                         <h4>$200 / Hr</h4> --
                                     </div>
-                                </div>											
+                                </div>
                             </div>
                         </div>
                         <a href="booking" class="btn btn-primary mt-4">Book Now</a>
-                    </div>	
+                    </div>
                     @endforeach
-                           
+
             </div>
         </div>
-    </div>   
-</section>	 
+    </div>
+</section>
 <!-- /Counsellors --> --}}
 
 <!-- Reviews -->
@@ -253,19 +252,19 @@
                     </div>
                     <div class="card-footer">
                         <div class="">
-                            
-                            
-                            
+
+
+
                                 <a href="/boking" class="btn action-button btn-block">Book Now</a>
-                            
+
                             </div>
                         </div>
                     </div>
                 </div>
-            
+
             @endforeach
 
-           
+
         </div>
     </div>
 </section>
@@ -277,7 +276,7 @@
         <div class="call-width">
             <h2>“ If You are in Trouble Need our Help, Contact Us Immediately, We are Support 24/7 ”</h2>
             <a href="map-list" class="btn btn-lg mt-3 action-button">OUR SERVICES</a>
-        </div>					
+        </div>
     </div>
 </section>
 <!-- /Call to Action -->
@@ -295,7 +294,7 @@
                 <div class="media">
                     <a href="blog-details">
                         <img src="./assets/img/blog-01.png" alt="Blog">
-                    </a>								
+                    </a>
                     <div class="media-body">
                         <h4 class="blog-date">21 jan 2021</h4>
                           <h5 class="mt-0 blog-heading"> <a href="blog-details"> How to Cope with Coronavirus-Caused Mental Health Concerns</a></h5>
