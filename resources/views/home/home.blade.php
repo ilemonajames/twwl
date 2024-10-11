@@ -143,7 +143,7 @@
 <section class="section section-we-always">
     <div class="row ml-5">
         {{-- <div class="col-sm-5 col-lg-7 p-0 sec-hide we-al-img"> --}}
-            <div class="col-sm-5 col-lg-7 p-0 sec-hide">
+            <div class="col-sm-5 col-lg-7 p-0 sec-hide we-al-img">
             <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
 
     <dotlottie-player src="https://lottie.host/d84e8303-61c2-4b2f-b6a7-7d9f654ee3b4/La5A65T3yD.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
