@@ -13,7 +13,7 @@
   <body class="account-page">
   @endif
   @if(Route::is(['video-call','voice-call']))
-  <body class="call-page">
+  <body class="call-page containter">
   @endif
 @include('layout.partials.header')
 @yield('content')

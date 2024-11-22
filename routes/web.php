@@ -60,6 +60,10 @@ use App\Livewire\WebsiteAdmin\Booking\AppointmentsComponent;
 
 use App\Livewire\WebsiteAdmin\Newsletters\SendNewsletterComponent;
 use App\Livewire\WebsiteAdmin\Newsletters\SentNewsletterComponent;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\ChatController;
+use App\Http\Controllers\ResourceController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -90,6 +94,16 @@ Route::get('/frequently-asked-question', function () {
     $faqs = App\Models\Faq::all();
     return view('informations.faq',compact('faqs'));
 })->name('faq');
+Route::post('/chat', [ChatController::class, 'chat']);
+Route::get('/chat', function () {
+    return view('chat');
+});
+
+Route::get('/resources', [ResourceController::class, 'index'])->name('resources.all');
+Route::get('/resources/videos', [ResourceController::class, 'videos'])->name('resources.videos');
+Route::get('/resources/podcasts', [ResourceController::class, 'podcasts'])->name('resources.podcasts');
+Route::get('/resources/books', [ResourceController::class, 'books'])->name('resources.books');
+Route::get('/resources/articles', [ResourceController::class, 'articles'])->name('resources.articles');
 
 // Appointment Routes
 Route::resource('appointments', AppointmentController::class)->except(['index', 'create', 'show', 'edit']);
@@ -123,6 +137,12 @@ Route::get('blogs', [BlogController::class, 'all_blogs'])->name('blogs.all');
 
 Route::get('program-details/{id}/details', [ProgramController::class, 'details'])->name('programs.details');
 Route::get('programs', [ProgramController::class, 'all_programs'])->name('programs.all');
+
+
+// Booking Routes
+Route::get('/booking', [BookingController::class, 'showBookingForm'])->name('booking.form');
+Route::post('/booking', [BookingController::class, 'bookAsGuest'])->name('booking.submit');
+Route::get('/booking-success', [BookingController::class, 'bookingSuccessPage'])->name('booking.success');
 
 // Pages route
 // Route::get('/about', [PageController::class, 'about'])->name('about');

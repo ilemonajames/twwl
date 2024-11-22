@@ -1,6 +1,6 @@
 @extends('layout.mainlayout')
 @section('title')
-    Authorized Access
+    Please login or create an account to continue on The Way we Love
 @endsection
 
 @section('content')

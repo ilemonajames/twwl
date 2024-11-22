@@ -20,8 +20,8 @@
                     <div class="col-12 col-lg-6">
                       <div class="row justify-content-xl-end">
                         <div class="col-12 col-xl-11">
-                          <h2 class="h1 mb-3"><b>How can we help you?</b></h2>
-                          <p class="lead fs-4 text-secondary mb-5">We hope you have found an answer to your question. If you need any help, please search your query on our Support Center or contact us via email.</p>
+                          {{-- <h2 class="h1 mb-3"><b>How can we help you?</b></h2>
+                          <p class="lead fs-4 text-secondary mb-5">We hope you have found an answer to your question. If you need any help, please search your query on our Support Center or contact us via email.</p> --}}
                           <div class="accordion accordion-flush" id="accordionExample">
                             @foreach($faqs as $faq)
                             <div class="accordion-item">

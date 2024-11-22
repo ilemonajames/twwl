@@ -20,6 +20,10 @@ return new class extends Migration
             $table->uuid('program_id')->nullable()->constrained()->onDelete('cascade');
             $table->decimal('amount', 8, 2);
             $table->string('payment_status')->default('pending');
+            $table->string('payment_method')->nullable();
+            $table->string('transaction_id')->nullable();
+            $table->string('transaction_status')->nullable();
+            $table->string('transaction_currency')->nullable();
             $table->timestamps();
         });
 
