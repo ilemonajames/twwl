@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('program_fees', function (Blueprint $table) {
             $table->id();
             $table->uuid('program_id')->nullable()->constrained()->onDelete('cascade');
-            $table->uuid('service_id')->nullable()->constrained()->onDelete('cascade');
+            // $table->uuid('service_id')->nullable()->constrained()->onDelete('cascade');
             $table->decimal('consultation_fees', 8, 2);
             $table->decimal('session_fees', 8, 2);
             $table->decimal('program_fees', 8, 2);

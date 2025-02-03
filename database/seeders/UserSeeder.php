@@ -28,16 +28,5 @@ class UserSeeder extends Seeder
             'status' => "Active",
             'resident_address' => "Abuja"
         ]);
-
-        User::create([
-            'surname' => 'Ugbon',
-            'othernames' => 'Ember',
-            'email' => 'emberugbon@gmail.com',
-            'phoneno' => '08031841291',
-            'password' => Hash::make('Luvday@1994'),
-            'user_type' => 'Website Admin',
-            'status' => "Active",
-            'resident_address' => "Abuja"
-        ]);
     }
 }
