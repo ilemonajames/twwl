@@ -40,11 +40,6 @@
 			</section>
 			<!-- /Call to Action -->
 
-
-
-
-           
-
 			<!-- We Always -->
 			<section class="section section-we-always fade-in">
 				<div class="row mb-2">
@@ -89,7 +84,7 @@
 			</section>
 
 
-	
+
 			<!-- Services -->
 <section class="section section-blog fade-in">
     <div class="container">
@@ -109,16 +104,16 @@
                         <a href="{{ route('services.details', $service->id) }}" class="btn btn-primary" style="float: right">Learn more</a>
 				</div>
 			</div>
-			
 
-                
+
+
             </div>
             @endforeach
         </div>
     </div>
 </section>
 <!-- /Services -->
-			
+
             <!-- /Breadcrumb -->
  {{-- <section class="section section-blog">
 				<div class="breadcrumb-bar mt-5">
@@ -166,12 +161,12 @@
             </section> --}}
 
 
-{{-- 
+{{--
 <section class="why-choose-us-section py-5">
     <div class="container">
         <h2 class="text-center mb-4">Why You Should Choose Us</h2>
         <p class="text-center mb-5">At The Way We Love, we are dedicated to helping you:</p>
-        
+
         <div class="row">
             <div class="col-md-4">
                 <div class="choose-us-item">
@@ -276,4 +271,4 @@
 
 @endsection
 
-			
+
